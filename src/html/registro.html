@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="../img/favicon.png" width="100">
+        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100">
             <h1>HabitaQ</h1>
         </a>
         <nav>
@@ -22,7 +22,8 @@
     </header>
     <main>
         <section>
-            <form>
+            <h2>Registro</h2>
+            <form method="get" action="indexRegistrado.html">
                 <label for="usuario">Nombre de usuario:</label>
                 <input type="text" id="usuario" name="usuario" pattern="[A-Za-z][A-Za-z0-9]{2,14}" minlength="3" maxlength="15" required>
 
@@ -37,36 +38,37 @@
 
                 <label for="sexo">Sexo</label>
                 <select name="sexo" id="sexo" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
                     <option value="Hombre">Hombre</option>
-                    <option value="Hombre">Mujer</option>
-                    <option value="Hombre">Otro</option>
-                    <option value="Hombre">Prefiero no especificarlo</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="Otro">Otro</option>
+                    <option value="Prefiero no especificarlo">Prefiero no especificarlo</option>
                 </select>
 
                 <label for="birthdate">Fecha de nacimiento</label>
-                <input type="date" required>
+                <input type="date" id="birthdate" name="birthdate" required>
 
                 <label for="city">Ciudad</label>
                 <input type="text" name="city" id="city">
 
                 <label for="country">País de residencia</label>
                 <select name="country" id="country">
-                    <option value="Spain">Spain</option>
-                    <option value="France">France</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United States">United States</option>
-                    <option value="Canada">Canada</option>
+                    <option value="Alemania">Alemania</option>
                     <option value="Australia">Australia</option>
-                    <option value="Japan">Japan</option>
+                    <option value="Canadá">Canadá</option>
+                    <option value="España" selected>España</option>
+                    <option value="Estados Unidos">Estados Unidos</option>
+                    <option value="Francia">Francia</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Japón">Japón</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Reino Unido">Reino Unido</option>
                 </select>
 
                 <label for="foto">Foto:</label>
                 <input type="file" name="foto" id="foto">
 
-                <input type="submit" value="Entrar">
+                <input type="submit" value="Registrarse">
             </form>
         </section>
     </main>

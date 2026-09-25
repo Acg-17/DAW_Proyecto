@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="../img/favicon.png" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -19,7 +19,47 @@
         </nav>
     </header>
     <main>
+        <form method="get" action="resultadoBusqueda.html">
+            <label for="tipoAnuncio">Tipo de anuncio</label>
+            <select name="tipoAnuncio" id="tipoAnuncio">
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+            </select>
 
+            <label for="tipoVivienda">Tipo de vivienda</label>
+            <select name="tipoVivienda" id="tipoVivienda">
+                <option value="obraNueva">Obra nueva</option>
+                <option value="vivienda">Vivienda</option>
+                <option value="oficina">Oficina</option>
+                <option value="local">Local</option>
+                <option value="garaje">Garaje</option>
+            </select>
+
+            <label for="ciudad">Ciudad</label>
+            <input type="text" name="ciudad" id="ciudad">
+
+            <label for="country">País</label>
+            <select name="country" id="country">
+                <option value="Alemania">Alemania</option>
+                <option value="Australia">Australia</option>
+                <option value="Canadá">Canadá</option>
+                <option value="España" selected>España</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Francia">Francia</option>
+                <option value="Italia">Italia</option>
+                <option value="Japón">Japón</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Reino Unido">Reino Unido</option>
+            </select>
+
+            <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio">
+
+            <label for="fecha">Fecha de publicación</label>
+            <input type="date" name="fecha" id="fecha">
+
+            <input type="submit" value="Buscar">
+        </form>
     </main>
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>

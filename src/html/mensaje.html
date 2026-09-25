@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="index.html"><img src="../img/favicon.png" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -19,9 +19,12 @@
         </nav>
     </header>
     <main>
-        <form>
-            <input type="text" name="message" id="message">
-            <select name="messageType">
+        <form method="get" action="detalleAdd.html">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message"></textarea>
+
+            <label for="messageType">Tipo de mensaje</label>
+            <select name="messageType" id="messageType">
                 <option value="info">Más información</option>
                 <option value="cita">Solicitar una cita</option>
                 <option value="oferta">Comunicar una oferta</option>
