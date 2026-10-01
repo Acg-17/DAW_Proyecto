@@ -20,6 +20,7 @@
     </header>
     <main>
         <section id="userSection">
+            <h2>Información del usuario</h2>
             <button>Editar datos</button>
             <form id="datosUser" action="get">
                 <label for="usuario">Nombre de usuario:</label>
@@ -32,7 +33,7 @@
                 <input type="email" id="email" name="email" required value="Laura@gmail.com">
                 <br>
                 <label for="sexo">Sexo</label>
-                <select name="sexo" id="sexo" required>
+                <select name="sexo" id="sexo" required size="4">
                     <option value="Hombre">Hombre</option>
                     <option value="Mujer" selected>Mujer</option>
                     <option value="Otro">Otro</option>
@@ -61,7 +62,7 @@
                 <br>
                 <label for="foto">Foto:</label>
                 <input type="file" name="foto" id="foto">
-                <img src="../img/user.png" width="100">
+                <img src="../img/user.png" alt="Foto de perfil" width="100">
                 <br>
                 <input type="submit" value="Actualizar Datos">
             </form>
@@ -71,6 +72,7 @@
         <br>
         <br>
         <section>
+            <h2>Opciones</h2>
             <a href="error404.html">Tus anuncios</a>
             <a href="error404.html">Crear anuncio</a>
             <a href="misMensajes.html">Mis mensajes</a>
