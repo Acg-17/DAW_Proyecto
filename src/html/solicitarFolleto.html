@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HabitaQ - Folleto</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    <style>
+        table, tr, th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +25,59 @@
     </header>
     <main>
         <section>
-            <h2>Solicitar Folleto Impreso</h2>
+            <h2>Solicitud de impresión de folleto publicitario</h2>
+            <p>Mediante esta opción puedes solicitar la impresión y envío de uno de tus anuncios a todo color y a toda resolución.</p>
+
+            <h3>Tarifas</h3>
+            <table>
+                <caption>Tarifas de impresión y envío</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Concepto</th>
+                        <th scope="col">Tarifa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coste procesamiento y envío</td>
+                        <td>10 €</td>
+                    </tr>
+                    <tr>
+                        <td>&lt; 5 páginas</td>
+                        <td>2 € por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 5 y 10 páginas</td>
+                        <td>1.8 € por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>&gt; 10 páginas</td>
+                        <td>1.6 € por pág.</td>
+                    </tr>
+                    <tr>
+                        <td>Blanco y negro</td>
+                        <td>0 €</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>0.5 € por foto</td>
+                    </tr>
+                    <tr>
+                        <td>Resolución &lt;= 300 dpi</td>
+                        <td>0 € por foto</td>
+                    </tr>
+                    <tr>
+                        <td>Resolución &gt; 300 dpi</td>
+                        <td>0.2 € por foto</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Formulario de solicitud</h3>
+            <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu folleto publicitario. Los campos marcados son obligatorios.</p>
+
             <form action="respuestaFolleto.html" method="get">
                 <fieldset>
                     <legend>Información personal</legend>
@@ -41,7 +98,13 @@
                         <label for="piso">Piso:</label>
                         <input type="text" id="piso" name="piso">
                         <label for="letra">Letra:</label>
-                        <input type="text" id="letra" name="letra">
+                        <input type="text" id="letra" name="letra"><br>
+                        <label for="cp">Código Postal:</label>
+                        <input type="text" id="cp" name="cp" required>
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" id="localidad" name="localidad" required>
+                        <label for="provincia">Provincia:</label>
+                        <input type="text" id="provincia" name="provincia" required>
                     </fieldset>
                     <label for="tel">Teléfono:</label>
                     <input type="tel" id="tel" name="tel">
@@ -50,17 +113,17 @@
                     <legend>Folleto</legend>
 
                     <label for="col">Color de la portada:</label>
-                    <input type="color" id="col" name="col"><br>
+                    <input type="color" id="col" name="col" value="#000000"><br>
                     <label for="copias">Número de copias:</label>
-                    <input type="number" id="copias" name="copias" min="1" max="99" required><br>
+                    <input type="number" id="copias" name="copias" min="1" max="99" value="1" required><br>
                     <label for="res">Resolución de las fotos (DPI):</label>
-                    <input type="range" id="res" name="res" min="150" max="900" step="150"><br>
+                    <input type="range" id="res" name="res" min="150" max="900" step="150" value="150"><br>
                     <label for="anuncio">Anuncio a imprimir:</label>
                     <select name="anuncio" id="anuncio" required>
                         <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="Anuncio1">Anuncio1</option>
-                        <option value="Anuncio2">Anuncio2</option>
-                        <option value="Anuncio3">Anuncio3</option>
+                        <option value="Casa moderna con jardín">Casa moderna con jardín</option>
+                        <option value="Chalet junto al mar">Chalet junto al mar</option>
+                        <option value="Casa rural de montaña">Casa rural de montaña</option>
                     </select><br>
                     <label for="fecha">Fecha de recepción:</label>
                     <input type="date" id="fecha" name="fecha"><br>
@@ -73,7 +136,7 @@
                         <input type="checkbox" id="precio" name="precio">
                     </fieldset>
                     <label for="AdT">Texto Adicional:</label>
-                <textarea id="AdT" name="AdT" maxlength="4000"></textarea>
+                    <textarea id="AdT" name="AdT" maxlength="4000"></textarea>
                 </fieldset>
                 <input type="submit" value="Solicitar Folleto">
             </form>
