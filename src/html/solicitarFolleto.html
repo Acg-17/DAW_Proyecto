@@ -8,6 +8,17 @@
     <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var slider = document.getElementById("res");
+            var output = document.getElementById("resValor");
+            if (slider && output) {
+                slider.addEventListener("input", function () {
+                    output.textContent = slider.value + " DPI";
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -133,8 +144,16 @@
                     <label for="copias">Número de copias (1 - 99): *</label>
                     <input type="number" id="copias" name="copias" min="1" max="99" value="1" required>
 
-                    <label for="res">Resolución de las fotos (DPI):</label>
-                    <input type="range" id="res" name="res" min="150" max="900" step="150" value="150">
+                    <label for="res">Resolución de las fotos: <output id="resValor" for="res">150 DPI</output></label>
+                    <input type="range" id="res" name="res" min="150" max="900" step="150" value="150" list="valoresRes">
+                    <datalist id="valoresRes">
+                        <option value="150" label="150 DPI"></option>
+                        <option value="300" label="300 DPI"></option>
+                        <option value="450" label="450 DPI"></option>
+                        <option value="600" label="600 DPI"></option>
+                        <option value="750" label="750 DPI"></option>
+                        <option value="900" label="900 DPI"></option>
+                    </datalist>
 
                     <label for="anuncio">Anuncio a imprimir: *</label>
                     <select name="anuncio" id="anuncio" required>

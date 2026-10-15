@@ -14,7 +14,16 @@ section:has(> a > article) {
 
 section:has(> a > article) > h2 {
     grid-column: 1 / -1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+section:has(> a > article) > p:first-of-type {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
 }
 
 /* Enlaces que envuelven las tarjetas */
