@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Diseño Adaptativo (Responsive Design)
+   Puntos de ruptura: Móvil (<=480px), Tablet (481px-1024px), Escritorio (>=1025px y 1920px+)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PANTALLAS DE BAJA RESOLUCIÓN / MÓVILES (<= 480px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 480px) {
+    body > header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--espacio-sm);
+    }
+
+    body > header > a:first-child {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        width: 100%;
+        justify-content: center;
+        padding: 0.4rem;
+    }
+
+    main {
+        padding: var(--espacio-sm);
+    }
+
+    main > header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: var(--espacio-md);
+    }
+
+    main > header form {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    main > header input[type="search"] {
+        width: 100%;
+    }
+
+    main > header input[type="submit"] {
+        width: 100%;
+    }
+
+    /* Anuncios en 1 columna ocupando todo el ancho */
+    section:has(> a > article) {
+        grid-template-columns: 1fr;
+    }
+
+    input[type="submit"],
+    button {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS Y PANTALLAS MEDIANAS (481px a 1024px)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    main {
+        padding: var(--espacio-md);
+    }
+
+    /* Anuncios en 2 columnas */
+    section:has(> a > article) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--espacio-md);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. ALTA RESOLUCIÓN Y ESCRITORIO (>= 1025px y 1920px+)
+   Maquetación en varias columnas (Requisito fundamental de la práctica)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1025px) {
+    /* Maquetación en varias columnas de la página principal (Aside + Sección) */
+    main:has(> aside):has(> section) {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-areas:
+            "topbar topbar"
+            "sidebar content";
+        gap: var(--espacio-xl);
+        align-items: start;
+    }
+
+    main:has(> aside):has(> section) > header {
+        grid-area: topbar;
+    }
+
+    main:has(> aside):has(> section) > aside {
+        grid-area: sidebar;
+        position: sticky;
+        top: 1rem;
+    }
+
+    main:has(> aside):has(> section) > section {
+        grid-area: content;
+    }
+
+    /* Rejilla de anuncios en 3 o más columnas en alta resolución */
+    section:has(> a > article) {
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: var(--espacio-lg);
+    }
+
+    /* En pantallas de 1920px o más, distribución de hasta 4 columnas */
+    @media (min-width: 1920px) {
+        :root {
+            --ancho-maximo: 1600px;
+        }
+
+        section:has(> a > article) {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--espacio-xl);
+        }
+    }
+
+    /* Maquetación en dos columnas para el detalle del inmueble */
+    main > article {
+        display: grid;
+        grid-template-columns: 440px 1fr;
+        gap: var(--espacio-xl);
+        align-items: start;
+    }
+
+    main > article > header {
+        grid-column: 1 / -1;
+    }
+
+    main > article > img:nth-of-type(1) {
+        grid-column: 1;
+        grid-row: 2 / span 7;
+        margin-bottom: 0;
+    }
+
+    /* Maquetación del Menú de Usuario en varias columnas */
+    main:has(#userSection):has(section:nth-of-type(2)) {
+        display: grid;
+        grid-template-columns: 1.3fr 1fr;
+        gap: var(--espacio-xl);
+        align-items: start;
+    }
+}

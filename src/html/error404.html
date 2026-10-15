@@ -4,26 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HabitaQ - Error</title>
+    <title>HabitaQ - Error 404</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
     <header>
-        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formBusqueda.html">Búsqueda Avanzada</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <p>Error 404. Página no encontrada</p>
+
+    <main id="contenido-principal">
+        <section>
+            <h2><i class="fa-solid fa-triangle-exclamation" role="img" aria-label="Aviso"></i> Error 404</h2>
+            <p>Lo sentimos, la página solicitada no se encuentra disponible o ha cambiado de dirección.</p>
+            <p>
+                <a href="index.html" class="conBorde"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver a la página principal</a>
+            </p>
+        </section>
     </main>
+
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>
-        <p>&copy;Copyright 2026</p>
+        <p>&copy; Copyright 2026</p>
         <p>Desarrollo de Aplicaciones Web. Universidad de Alicante - Ingeniería multimedia 3º Curso</p>
     </footer>
 </body>

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Maquetación y Distribución Estructural (Layout)
+   Uso de elementos semánticos estándar sin divs superfluos
+   ========================================================================== */
+
+/* Cabecera Principal */
+body > header {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: var(--espacio-md) var(--espacio-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio-md);
+    border-bottom: 1px solid var(--color-primario-suave);
+}
+
+/* Marca / Logotipo */
+body > header > a:first-child {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio-md);
+    text-decoration: none;
+    color: var(--color-texto-claro);
+}
+
+body > header > a:first-child:hover {
+    text-decoration: none;
+}
+
+body > header img {
+    width: 48px;
+    height: auto;
+}
+
+body > header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color-texto-claro);
+    letter-spacing: -0.5px;
+    font-weight: 700;
+}
+
+/* Menú de Navegación */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
+    align-items: center;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radio-borde-sm);
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    text-decoration: none;
+}
+
+/* Contenido Principal (main) */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--ancho-maximo);
+    margin: 0 auto;
+    padding: var(--espacio-lg);
+}
+
+/* Barra superior interna de main */
+main > header {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-md) var(--espacio-lg);
+    margin-bottom: var(--espacio-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espacio-md);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+/* Barra lateral / aside */
+aside {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-lg);
+    box-shadow: var(--sombra-tarjeta);
+    margin-bottom: var(--espacio-lg);
+}
+
+/* Secciones de contenido */
+section {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-lg);
+    margin-bottom: var(--espacio-lg);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+/* Pie de Página */
+footer {
+    background-color: var(--color-primario);
+    color: #94a3b8;
+    text-align: center;
+    padding: var(--espacio-lg) var(--espacio-md);
+    margin-top: auto;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--color-primario-suave);
+}
+
+footer p {
+    margin: var(--espacio-xs) 0;
+}

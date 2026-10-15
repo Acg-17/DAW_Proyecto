@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Maquetación de Formularios y Alineación de Controles (Sección 4.5 del PDF)
+   Basado exclusivamente en selectores semánticos de formulario sin divitis
+   ========================================================================== */
+
+form {
+    width: 100%;
+}
+
+fieldset {
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: var(--espacio-lg);
+    margin: 0 0 var(--espacio-lg) 0;
+    background-color: var(--color-superficie);
+}
+
+fieldset fieldset {
+    margin-top: var(--espacio-md);
+    background-color: var(--color-fondo);
+}
+
+legend {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-texto);
+    padding: 0 var(--espacio-sm);
+}
+
+label {
+    display: block;
+    margin-top: var(--espacio-md);
+    margin-bottom: var(--espacio-xs);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.925rem;
+    color: var(--color-texto);
+    background-color: #ffffff;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: var(--espacio-xs);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-borde-foco);
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.12);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    display: block;
+    margin: var(--espacio-sm) 0;
+    font-size: 0.875rem;
+    color: var(--color-texto-suave);
+}
+
+input[type="color"] {
+    width: 60px;
+    height: 38px;
+    padding: 2px;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde-sm);
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+    margin: var(--espacio-sm) 0;
+    accent-color: var(--color-primario);
+}
+
+/* Casillas de verificación inline */
+fieldset:has(input[type="checkbox"]) label,
+input[type="checkbox"] + label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: var(--espacio-md);
+    margin-top: var(--espacio-xs);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primario);
+    cursor: pointer;
+    margin-right: 0.35rem;
+    vertical-align: middle;
+}
+
+/* Botones y envíos de formulario */
+input[type="submit"],
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    font-family: var(--fuente-titulos);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.7rem 1.6rem;
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio-borde-sm);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    margin-top: var(--espacio-md);
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+button[disabled],
+input[type="submit"][disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Formulario de búsqueda en encabezado */
+main > header form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-xs);
+    align-items: center;
+    width: auto;
+}
+
+main > header input[type="search"] {
+    width: 260px;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+main > header input[type="submit"] {
+    margin-top: 0;
+    padding: 0.65rem 1.15rem;
+}
+
+/* Formulario en aside (Login) */
+aside form label {
+    margin-top: var(--espacio-sm);
+}
+
+aside form input[type="submit"] {
+    width: 100%;
+    margin-top: var(--espacio-md);
+}

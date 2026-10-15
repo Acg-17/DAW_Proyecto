@@ -6,40 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HabitaQ - Mis Mensajes</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
-    <style>
-        table, tr, th, td {
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
     <header>
-        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formBusqueda.html">Búsqueda Avanzada</a></li>
-                <li><a href="menuUsuario.html">Mi Perfil</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
+                <li><a href="menuUsuario.html"><i class="fa-solid fa-user" role="img" aria-label="Mi Perfil"></i> Mi Perfil</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main id="contenido-principal">
         <section>
-            <h2>Mis Mensajes</h2>
-            <p>Gestión de comunicaciones enviadas y recibidas en la plataforma.</p>
+            <h2><i class="fa-solid fa-envelope" role="img" aria-label="Mensajes"></i> Centro de Mensajes</h2>
+            <p>Gestión de comunicaciones enviadas y recibidas con anunciantes y compradores en la plataforma.</p>
         </section>
 
         <section>
-            <h3>Mensajes Enviados</h3>
+            <h3><i class="fa-solid fa-paper-plane" role="img" aria-label="Enviados"></i> Mensajes Enviados</h3>
             <table>
                 <caption>Historial de mensajes enviados a otros usuarios</caption>
                 <thead>
                     <tr>
                         <th scope="col">Destinatario</th>
-                        <th scope="col">Anuncio de referencia</th>
-                        <th scope="col">Tipo de mensaje</th>
-                        <th scope="col">Texto del mensaje</th>
+                        <th scope="col">Anuncio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Mensaje</th>
                         <th scope="col">Fecha</th>
                     </tr>
                 </thead>
@@ -70,15 +74,15 @@
         </section>
 
         <section>
-            <h3>Mensajes Recibidos</h3>
+            <h3><i class="fa-solid fa-inbox" role="img" aria-label="Recibidos"></i> Mensajes Recibidos</h3>
             <table>
                 <caption>Historial de mensajes recibidos de otros usuarios</caption>
                 <thead>
                     <tr>
                         <th scope="col">Remitente</th>
-                        <th scope="col">Anuncio de referencia</th>
-                        <th scope="col">Tipo de mensaje</th>
-                        <th scope="col">Texto del mensaje</th>
+                        <th scope="col">Anuncio</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Mensaje</th>
                         <th scope="col">Fecha</th>
                     </tr>
                 </thead>
@@ -104,14 +108,15 @@
         <section>
             <h2>Opciones de navegación</h2>
             <p>
-                <a href="menuUsuario.html">Volver al panel de usuario</a> | 
-                <a href="indexRegistrado.html">Ir al inicio</a>
+                <a href="menuUsuario.html" class="conBorde"><i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Volver al panel de usuario</a>
+                <a href="indexRegistrado.html" class="conBorde"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Ir al inicio</a>
             </p>
         </section>
     </main>
+
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>
-        <p>&copy;Copyright 2026</p>
+        <p>&copy; Copyright 2026</p>
         <p>Desarrollo de Aplicaciones Web. Universidad de Alicante - Ingeniería multimedia 3º Curso</p>
     </footer>
 </body>

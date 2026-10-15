@@ -4,60 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HabitaQ - Folleto</title>
+    <title>HabitaQ - Confirmación de Folleto</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
     <header>
-        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formBusqueda.html">Búsqueda Avanzada</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main id="contenido-principal">
         <section>
-            <h2>Folleto Solicitado</h2>
+            <h2><i class="fa-solid fa-circle-check" role="img" aria-label="Confirmación"></i> Folleto Solicitado con Éxito</h2>
+            <p>Tu solicitud ha sido procesada correctamente y el pedido entrará en imprenta en breve.</p>
+
             <fieldset>
                 <legend>Información personal</legend>
-
                 <p>Nombre: <strong>Carlos Gómez Pérez</strong></p>
                 <p>Email: <strong>carlos.gomez@example.com</strong></p>
-                <p>
-                    Dirección: <strong>Avda. Alfonso X el Sabio, Nº 14, Portal 2, 3º B, 03001, Alicante, Alicante</strong>
-                </p>
+                <p>Dirección: <strong>Avda. Alfonso X el Sabio, Nº 14, Portal 2, 3º B, 03001, Alicante, Alicante</strong></p>
                 <p>Teléfono: <strong>+34 612 345 678</strong></p>
             </fieldset>
+
             <fieldset>
-                <legend>Folleto</legend>
-                <p>Color de portada: <input type="color" value="#000000" disabled> (#000000)</p>
+                <legend>Detalles del folleto</legend>
+                <p>Color de portada: <input type="color" value="#0f172a" disabled></p>
                 <p>Número de copias: <strong>75</strong></p>
                 <p>Resolución: <strong>300 DPI</strong></p>
                 <p>Anuncio: <strong>Promoción Venta Chalet San Vicente</strong></p>
-                <p>Fecha de recepción: <strong>15/10/2026</strong></p>
+                <p>Fecha de recepción estimada: <strong>15/10/2026</strong></p>
                 <p>
                     Opciones adicionales seleccionadas:<br>
-                    Impresión a color: <strong>SÍ</strong><br>
-                    Impresión del precio: <strong>NO</strong>
+                    Impresión a color: <strong>Sí</strong><br>
+                    Impresión del precio: <strong>No</strong>
                 </p>
-                <p>Texto adicional: <strong>Incluir logotipo corporativo en la esquina inferior derecha.</strong></p>
-                <p>Coste total estimado: <strong>10 €</strong></p>
+                <p>Texto adicional: <em>"Incluir logotipo corporativo en la esquina inferior derecha."</em></p>
+                <p>Coste total estimado: <strong>10.00 €</strong></p>
             </fieldset>
         </section>
+
         <section>
-            <h2>Opciones</h2>
+            <h2>Opciones de navegación</h2>
             <p>
-                <a href="menuUsuario.html">Volver al panel de usuario</a> | 
-                <a href="indexRegistrado.html">Volver a la página principal</a>
+                <a href="menuUsuario.html" class="conBorde"><i class="fa-solid fa-user" role="img" aria-label="Perfil"></i> Volver al panel de usuario</a>
+                <a href="indexRegistrado.html" class="conBorde"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver a la página principal</a>
             </p>
         </section>
     </main>
+
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>
-        <p>&copy;Copyright 2026</p>
+        <p>&copy; Copyright 2026</p>
         <p>Desarrollo de Aplicaciones Web. Universidad de Alicante - Ingeniería multimedia 3º Curso</p>
     </footer>
 </body>

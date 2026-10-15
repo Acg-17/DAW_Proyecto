@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Hoja de Estilos Principal - HabitaQ (DAW Práctica 4: CSS)
+   Arquitectura modular mediante @import y variables CSS
+   ========================================================================== */
+
+/* 1. Variables globales del tema (Colores armónicos, tipografías, espaciados) */
+@import url("variables.css");
+
+/* 2. Estilos base, resets, tipografía y accesibilidad (.saltar-a) */
+@import url("base.css");
+
+/* 3. Maquetación estructural (Header, nav, main, aside, footer) */
+@import url("layout.css");
+
+/* 4. Componentes (Tarjetas de anuncios, galería de miniaturas, botones) */
+@import url("components.css");
+
+/* 5. Formularios y controles alineados */
+@import url("forms.css");
+
+/* 6. Tablas con diseño completo (gradientes, estilo cebra, hover) */
+@import url("tables.css");
+
+/* 7. Diseño adaptativo (Responsive: móvil <=480px, tablet, alta resolución) */
+@import url("responsive.css");

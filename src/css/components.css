@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Componentes Visuales (Tarjetas de Anuncios, Ficha de Detalle, etc.)
+   Diseño profesional, tipografía cuidada y cero elementos superfluos
+   ========================================================================== */
+
+/* Rejilla de tarjetas de anuncios */
+section:has(> a > article) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+section:has(> a > article) > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+}
+
+/* Enlaces que envuelven las tarjetas */
+section > a:has(> article) {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+}
+
+/* Tarjeta individual de anuncio (article) */
+article.anuncio,
+article {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-tarjeta);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section > a:has(> article):hover article {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-elevada);
+    border-color: #cbd5e1;
+}
+
+/* Imagen de la tarjeta */
+article > img:first-child,
+article > a > img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+/* Título de la tarjeta */
+article > h2,
+article > h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin: 1rem 1.25rem 0.35rem 1.25rem;
+    line-height: 1.35;
+}
+
+/* Detalles y ubicación */
+article > p {
+    margin: 0 1.25rem 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--color-texto-suave);
+    line-height: 1.5;
+}
+
+/* Precio en la tarjeta */
+article > p:last-child {
+    margin-top: auto;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-texto);
+}
+
+/* Página de Detalle de Inmueble (detalleAdd.html) */
+main > article {
+    padding: var(--espacio-lg);
+    background-color: var(--color-superficie);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-tarjeta);
+    border: 1px solid var(--color-borde);
+}
+
+main > article > header {
+    display: flex;
+    gap: var(--espacio-md);
+    margin-bottom: var(--espacio-md);
+    padding-bottom: var(--espacio-sm);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+main > article > header p {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    padding: var(--espacio-xs) var(--espacio-sm);
+    border-radius: var(--radio-borde-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+main > article > img:nth-of-type(1) {
+    width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    border-radius: var(--radio-borde);
+    margin-bottom: var(--espacio-lg);
+    border: 1px solid var(--color-borde);
+}
+
+main > article h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+main > article h3 {
+    font-size: 1.35rem;
+    color: var(--color-texto);
+    font-weight: 700;
+    margin-bottom: var(--espacio-md);
+}
+
+/* Galería de miniaturas */
+main > article p:has(> img[alt*="Miniatura"]) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacio-sm);
+    margin: var(--espacio-md) 0;
+}
+
+main > article img[alt*="Miniatura"] {
+    width: 76px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: var(--radio-borde-sm);
+    border: 1px solid var(--color-borde);
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+main > article img[alt*="Miniatura"]:hover {
+    border-color: var(--color-texto);
+    transform: scale(1.04);
+}
+
+/* Botón de contacto en detalle */
+main > article a[href="mensaje.html"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radio-borde-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+main > article a[href="mensaje.html"]:hover {
+    background-color: var(--color-secundario);
+    text-decoration: none;
+}
+
+/* Panel de Opciones de Usuario */
+section > p:has(> a[href*=".html"]) a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    background-color: var(--color-superficie);
+    transition: all 0.2s ease;
+}
+
+section > p:has(> a[href*=".html"]) a:hover {
+    background-color: var(--color-fondo);
+    border-color: var(--color-secundario);
+    text-decoration: none;
+}
+
+/* Avatar de usuario */
+img[alt*="perfil"] {
+    border-radius: 50%;
+    border: 2px solid var(--color-borde);
+    margin: var(--espacio-sm) 0;
+}

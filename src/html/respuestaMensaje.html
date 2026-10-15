@@ -6,45 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HabitaQ - Mensaje Enviado</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
     <header>
-        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formBusqueda.html">Búsqueda Avanzada</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main id="contenido-principal">
         <section>
-            <h2>Confirmación de Envío</h2>
-            <p><strong>¡Mensaje enviado con éxito!</strong> Su comunicación ha sido registrada correctamente y el anunciante recibirá una notificación.</p>
+            <h2><i class="fa-solid fa-circle-check" role="img" aria-label="Éxito"></i> Confirmación de Envío</h2>
+            <p><strong>¡Mensaje enviado con éxito!</strong> Tu comunicación ha sido registrada correctamente y el anunciante recibirá una notificación.</p>
 
             <fieldset>
                 <legend>Resumen del mensaje enviado</legend>
                 <p>Destinatario: <strong>Laura García</strong></p>
                 <p>Anuncio: <strong>Casa moderna con jardín</strong> (Valencia, España)</p>
                 <p>Tipo de mensaje: <strong>Solicitar una cita</strong></p>
-                <p>Texto del mensaje: <strong>Hola, me gustaría solicitar una cita para visitar la propiedad el próximo sábado por la mañana. Quedo a la espera de su respuesta. Gracias.</strong></p>
+                <p>Texto del mensaje: <em>"Hola, me gustaría solicitar una cita para visitar la propiedad el próximo sábado por la mañana. Quedo a la espera de su respuesta. Gracias."</em></p>
                 <p>Fecha y hora de envío: <strong>02/10/2026 - 10:30</strong></p>
             </fieldset>
         </section>
 
         <section>
-            <h2>Opciones</h2>
+            <h2>Opciones de navegación</h2>
             <p>
-                <a href="detalleAdd.html">Volver al detalle del anuncio</a> | 
-                <a href="misMensajes.html">Ver mis mensajes</a> | 
-                <a href="index.html">Volver a la página principal</a>
+                <a href="detalleAdd.html" class="conBorde"><i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Volver al detalle del anuncio</a>
+                <a href="misMensajes.html" class="conBorde"><i class="fa-solid fa-envelope" role="img" aria-label="Mensajes"></i> Ver mis mensajes</a>
+                <a href="index.html" class="conBorde"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver a la página principal</a>
             </p>
         </section>
     </main>
+
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>
-        <p>&copy;Copyright 2026</p>
+        <p>&copy; Copyright 2026</p>
         <p>Desarrollo de Aplicaciones Web. Universidad de Alicante - Ingeniería multimedia 3º Curso</p>
     </footer>
 </body>

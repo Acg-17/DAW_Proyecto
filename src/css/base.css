@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Estilos Base y Normalización
+   Uso exclusivo de selectores simples de etiquetas HTML
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Enlace accesible para saltar al contenido principal (Requisito Práctica 4) */
+.saltar-a {
+    position: absolute;
+    top: -9999px;
+    left: 1rem;
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: var(--espacio-sm) var(--espacio-md);
+    font-family: var(--fuente-titulos);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radio-borde-sm);
+    z-index: 9999;
+    border: 1px solid var(--color-texto-claro);
+    transition: top 0.2s ease-in-out;
+}
+
+.saltar-a:focus {
+    top: 1rem;
+    outline: 2px solid var(--color-texto);
+}
+
+/* Jerarquía tipográfica */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto);
+    margin-top: 0;
+    margin-bottom: var(--espacio-sm);
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: var(--espacio-sm);
+    margin-bottom: var(--espacio-lg);
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: var(--espacio-sm);
+}
+
+/* Enlaces sobrios y profesionales */
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: opacity 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Iconos estrictamente monocromáticos (blanco y negro / gris) */
+i.fa-solid,
+i.fa-regular,
+i.fa-brands {
+    color: inherit;
+    font-size: 0.95em;
+    vertical-align: -0.05em;
+}
+
+/* Clases específicas solicitadas por el profesor en la Práctica 4 */
+.conBorde {
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio-borde-sm);
+    padding: var(--espacio-sm) var(--espacio-md);
+    background-color: var(--color-superficie);
+}
+
+.anuncio {
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-superficie);
+}

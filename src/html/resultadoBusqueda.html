@@ -6,82 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HabitaQ - Resultados</title>
     <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
     <header>
-        <a href="index.html"><img src="../img/favicon.png" alt="HabitaQ" width="100"><h1>HabitaQ</h1></a>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="formBusqueda.html">Búsqueda Avanzada</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
             </ul>
         </nav>
     </header>
-    <main>
+
+    <main id="contenido-principal">
         <section>
-            <h2>Resultados</h2>
+            <h2>Resultados de la búsqueda</h2>
+            <p>Se han encontrado <strong>5</strong> inmuebles disponibles.</p>
             <a href="detalleAdd.html">
-                <article>
+                <article class="anuncio">
                     <img src="../img/casa1.png" alt="Casa moderna con jardín" width="200">
-                    <h2>Casa moderna con jardín</h2>
-                    <p>
-                        15/09/2026 <br>
-                        Valencia <br>
-                        España <br>
-                        285.000 € <br>
-                    </p>
+                    <h3>Casa moderna con jardín</h3>
+                    <p>Valencia, España &bull; 15/09/2026</p>
+                    <p><strong>285.000 €</strong></p>
                 </article>
-            </a><a href="errorUsrNotRegistered.html">
-                <article>
+            </a>
+            <a href="errorUsrNotRegistered.html">
+                <article class="anuncio">
                     <img src="../img/casa2.png" alt="Chalet junto al mar" width="200">
-                    <h2>Chalet junto al mar</h2>
-                    <p>
-                        18/09/2026 <br>
-                        Alicante <br>
-                        España <br>
-                        420.000 € <br>
-                    </p>
+                    <h3>Chalet junto al mar</h3>
+                    <p>Alicante, España &bull; 18/09/2026</p>
+                    <p><strong>420.000 €</strong></p>
                 </article>
-            </a><a href="detalleAdd.html">
-                <article>
+            </a>
+            <a href="detalleAdd.html">
+                <article class="anuncio">
                     <img src="../img/casa3.png" alt="Casa rural de montaña" width="200">
-                    <h2>Casa rural de montaña</h2>
-                    <p>
-                        20/09/2026 <br>
-                        Granada <br>
-                        España <br>
-                        195.000 € <br>
-                    </p>
+                    <h3>Casa rural de montaña</h3>
+                    <p>Granada, España &bull; 20/09/2026</p>
+                    <p><strong>195.000 €</strong></p>
                 </article>
-            </a><a href="detalleAdd.html">
-                <article>
+            </a>
+            <a href="detalleAdd.html">
+                <article class="anuncio">
                     <img src="../img/casa4.png" alt="Apartamento luminoso" width="200">
-                    <h2>Apartamento luminoso</h2>
-                    <p>
-                        21/09/2026 <br>
-                        Lisboa <br>
-                        Portugal <br>
-                        310.000 € <br>
-                    </p>
+                    <h3>Apartamento luminoso</h3>
+                    <p>Lisboa, Portugal &bull; 21/09/2026</p>
+                    <p><strong>310.000 €</strong></p>
                 </article>
-            </a><a href="detalleAdd.html">
-                <article>
+            </a>
+            <a href="detalleAdd.html">
+                <article class="anuncio">
                     <img src="../img/casa5.png" alt="Villa con piscina privada" width="200">
-                    <h2>Villa con piscina privada</h2>
-                    <p>
-                        23/09/2026 <br>
-                        Málaga <br>
-                        España <br>
-                        575.000 € <br>
-                    </p>
+                    <h3>Villa con piscina privada</h3>
+                    <p>Málaga, España &bull; 23/09/2026</p>
+                    <p><strong>575.000 €</strong></p>
                 </article>
             </a>
         </section>
     </main>
+
     <footer>
         <p>Pau Cremades García. Antonio Carbonell Gómez</p>
-        <p>&copy;Copyright 2026</p>
+        <p>&copy; Copyright 2026</p>
         <p>Desarrollo de Aplicaciones Web. Universidad de Alicante - Ingeniería multimedia 3º Curso</p>
     </footer>
 </body>
