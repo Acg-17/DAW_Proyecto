@@ -21,11 +21,10 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: var(--fuente-cuerpo);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    border: none;
+    font: normal 400 0.95rem/1.6 var(--fuente-cuerpo);
     color: var(--color-texto);
-    background-color: var(--color-fondo);
+    background: var(--color-fondo);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

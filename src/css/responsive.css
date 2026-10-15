@@ -160,3 +160,43 @@
         align-items: start;
     }
 }
+
+/* --------------------------------------------------------------------------
+   4. ESTILOS DE IMPRESIÓN (Sección 4.1 del documento de la práctica)
+   -------------------------------------------------------------------------- */
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+    }
+
+    body > header nav,
+    aside,
+    .saltar-a,
+    input[type="submit"],
+    button {
+        display: none !important;
+    }
+
+    main {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    section, article {
+        box-shadow: none;
+        border: 1px solid #cccccc;
+        page-break-inside: avoid;
+    }
+
+    table {
+        page-break-inside: avoid;
+    }
+
+    thead th {
+        background: #eeeeee !important;
+        color: #000000 !important;
+        text-shadow: none !important;
+    }
+}
