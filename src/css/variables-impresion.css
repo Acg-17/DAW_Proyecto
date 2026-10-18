@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Variables CSS - Proyecto DAW (HabitaQ)
+   Paleta monocromática elegante, profesional y minimalista
+   ========================================================================== */
+
+:root {
+    /* Paleta de colores sobria y profesional (3-5 colores) */
+    --color-primario: #0f172a;          /* Pizarra oscuro / casi negro */
+    --color-primario-suave: #1e293b;    /* Pizarra intermedio */
+    --color-secundario: #334155;        /* Gris pizarra para elementos secundarios */
+    --color-fondo: #f8fafc;             /* Fondo blanco roto / gris muy claro */
+    --color-superficie: #ffffff;        /* Blanco puro para tarjetas y formularios */
+    --color-texto: #0f172a;             /* Texto principal oscuro de alto contraste */
+    --color-texto-suave: #64748b;       /* Texto atenuado para metadatos */
+    --color-texto-claro: #ffffff;       /* Texto blanco sobre fondos oscuros */
+    --color-borde: #e2e8f0;             /* Borde neutro sutil */
+    --color-borde-foco: #0f172a;        /* Borde de foco */
+
+    /* Tablas monocromáticas */
+    --color-tabla-cabecera: #0f172a;
+    --color-fila-impar: #f8fafc;
+    --color-fila-par: #ffffff;
+    --color-fila-hover: #f1f5f9;
+
+    /* Tipografía profesional */
+    --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
+    --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+    /* Espaciados */
+    --espacio-xs: 0.25rem;
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 1.5rem;
+    --espacio-xl: 2rem;
+
+    /* Bordes y sombras limpias */
+    --radio-borde: 8px;
+    --radio-borde-sm: 4px;
+    --sombra-tarjeta: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+    --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+
+    /* Ancho máximo de página */
+    --ancho-maximo: 1240px;
+}
