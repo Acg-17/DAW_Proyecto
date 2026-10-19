@@ -19,7 +19,7 @@
     --color-borde-foco: #0f172a;        /* Borde de foco */
 
     /* Tablas monocromáticas */
-    --color-tabla-cabecera: #0f172a;
+    --color-tabla-cabecera: linear-gradient(to bottom, #1e293b, #0f172a);
     --color-fila-impar: #f8fafc;
     --color-fila-par: #ffffff;
     --color-fila-hover: #f1f5f9;

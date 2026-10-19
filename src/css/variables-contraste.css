@@ -1,30 +1,34 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-   Variables CSS - Proyecto DAW (HabitaQ)
-   Paleta monocromática elegante, profesional y minimalista
+   Variables CSS - Proyecto DAW (HabitaQ) - Versión Alto Contraste WCAG 2.1 AA
+   Criterio 1.4.3: Garantiza contraste >= 4.5:1 (Texto) y >= 3:1 (Componentes)
    ========================================================================== */
 
 :root {
-    /* Paleta de colores sobria y profesional (3-5 colores) */
-    --color-primario: #0f172a;          /* Pizarra oscuro / casi negro */
-    --color-primario-suave: #1e293b;    /* Pizarra intermedio */
-    --color-secundario: #334155;        /* Gris pizarra para elementos secundarios */
-    --color-fondo: #f8fafc;             /* Fondo blanco roto / gris muy claro */
-    --color-superficie: #ffffff;        /* Blanco puro para tarjetas y formularios */
-    --color-texto: #0f172a;             /* Texto principal oscuro de alto contraste */
-    --color-texto-suave: #64748b;       /* Texto atenuado para metadatos */
-    --color-texto-claro: #ffffff;       /* Texto blanco sobre fondos oscuros */
-    --color-borde: #e2e8f0;             /* Borde neutro sutil */
-    --color-borde-foco: #0f172a;        /* Borde de foco */
+    /* Paleta de alto contraste principal */
+    --color-primario: #FFFF00;          /* Amarillo puro de alto contraste */
+    --color-primario-suave: #D4D400;    /* Amarillo ligeramente más oscuro */
+    --color-secundario: #00FFFF;        /* Cian eléctrico accesible */
+    --color-fondo: #000000;             /* Fondo negro puro */
+    --color-superficie: #121212;        /* Gris oscuro para tarjetas y módulos */
+    
+    /* Tipografía y Textos de Alto Contraste (WCAG AA compliant) */
+    --color-texto: #FFFFFF;             /* Blanco puro para títulos y texto general (Contraste 21:1) */
+    --color-texto-suave: #E0E0E0;       /* Gris muy claro para metadatos/ubicaciones (Contraste > 10:1) */
+    --color-texto-claro: #000000;       /* Texto negro sobre botones o cabeceras amarillas */
+    
+    /* Bordes y estados */
+    --color-borde: #FFFF00;             /* Bordes amarillos bien definidos */
+    --color-borde-foco: #00FFFF;        /* Foco en cian eléctrico */
 
-    /* Tablas monocromáticas */
-    --color-tabla-cabecera: #0f172a;
-    --color-fila-impar: #f8fafc;
-    --color-fila-par: #ffffff;
-    --color-fila-hover: #f1f5f9;
+    /* Tablas de alto contraste */
+    --color-tabla-cabecera: #FFFF00;
+    --color-fila-impar: #1A1A1A;
+    --color-fila-par: #000000;
+    --color-fila-hover: #333333;
 
-    /* Tipografía profesional */
+    /* Tipografía */
     --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
     --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
 
@@ -35,12 +39,32 @@
     --espacio-lg: 1.5rem;
     --espacio-xl: 2rem;
 
-    /* Bordes y sombras limpias */
+    /* Bordes y contornos (Sin sombras difusas) */
     --radio-borde: 8px;
     --radio-borde-sm: 4px;
-    --sombra-tarjeta: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-    --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --sombra-tarjeta: 0 0 0 3px #FFFF00;
+    --sombra-elevada: 0 0 0 4px #00FFFF;
 
-    /* Ancho máximo de página */
+    /* Ancho máximo */
     --ancho-maximo: 1240px;
+}
+
+body > header img {
+    filter: brightness(0);
+}
+
+input, select, textarea {
+    color: #fcf8f8 !important;
+    background-color: #121212 !important;
+    border: 2px solid #FFFF00 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #c6c4c4 !important;
+    opacity: 1; 
+}
+
+thead th, tfoot th, tfoot td {
+    background-color: var(--color-tabla-cabecera) !important;
 }
