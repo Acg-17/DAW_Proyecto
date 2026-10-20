@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-   Variables CSS - Proyecto DAW (HabitaQ)
-   Paleta monocromática elegante, profesional y minimalista
+   Variables CSS - Proyecto DAW (HabitaQ) - Versión Letra Grande (Accesibilidad)
+   Escala tipográfica ampliada para mejorar legibilidad y accesibilidad visual
    ========================================================================== */
 
 :root {
-    /* Paleta de colores sobria y profesional (3-5 colores) */
+    /* Paleta de colores estándar sobria y profesional */
     --color-primario: #0f172a;          /* Pizarra oscuro / casi negro */
     --color-primario-suave: #1e293b;    /* Pizarra intermedio */
     --color-secundario: #334155;        /* Gris pizarra para elementos secundarios */
@@ -15,11 +15,26 @@
     --color-texto: #0f172a;             /* Texto principal oscuro de alto contraste */
     --color-texto-suave: #64748b;       /* Texto atenuado para metadatos */
     --color-texto-claro: #ffffff;       /* Texto blanco sobre fondos oscuros */
-    --color-borde: #e2e8f0;             /* Borde neutro sutil */
+    --color-borde: #cbd5e1;             /* Borde ligeramente más definido */
+    --color-borde-hover: #94a3b8;       /* Borde en hover */
     --color-borde-foco: #0f172a;        /* Borde de foco */
 
+    /* Colores semánticos */
+    --color-cabecera: #0f172a;
+    --color-cabecera-borde: #1e293b;
+    --color-enlace: #0f172a;
+    --color-enlace-hover: #334155;
+    --color-input-fondo: #ffffff;
+    --color-input-texto: #0f172a;
+    --color-input-placeholder: #64748b;
+    --color-boton-fondo: #0f172a;
+    --color-boton-hover: #334155;
+    --color-boton-texto: #ffffff;
+    --color-pie: #0f172a;
+    --color-pie-texto: #94a3b8;
+
     /* Tablas monocromáticas */
-    --color-tabla-cabecera: #0f172a;
+    --color-tabla-cabecera: linear-gradient(to bottom, #1e293b, #0f172a);
     --color-fila-impar: #f8fafc;
     --color-fila-par: #ffffff;
     --color-fila-hover: #f1f5f9;
@@ -28,19 +43,80 @@
     --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
     --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
 
-    /* Espaciados */
-    --espacio-xs: 0.25rem;
-    --espacio-sm: 0.5rem;
-    --espacio-md: 1rem;
-    --espacio-lg: 1.5rem;
-    --espacio-xl: 2rem;
+    /* ==========================================================================
+       Escala Tipográfica Ampliada (Letras Grandes - Aumento ~25% a ~35%)
+       ========================================================================== */
+    --tamano-fuente-html: 18px;              /* Base aumentada de raíz */
+    --tamano-fuente-base: 1.2rem;            /* Texto base del cuerpo y párrafos (era 0.95rem) */
+    --tamano-fuente-h1: 1.95rem;             /* Título h1 principal y cabecera (era 1.5rem) */
+    --tamano-fuente-h2: 1.65rem;             /* Subtítulos h2 de sección (era 1.3rem) */
+    --tamano-fuente-h3: 1.4rem;              /* Títulos h3 y subtítulos (era 1.1rem) */
+    --tamano-fuente-tarjeta-titulo: 1.35rem; /* Título de tarjetas de inmuebles (era 1.1rem) */
+    --tamano-fuente-tarjeta-texto: 1.05rem;  /* Descripción y ubicación en tarjeta (era 0.875rem) */
+    --tamano-fuente-precio: 1.55rem;         /* Precio destacado en anuncios (era 1.25rem) */
+    --tamano-fuente-precio-lg: 1.7rem;       /* Precio en ficha de detalle (era 1.35rem) */
+    --tamano-fuente-nav: 1.15rem;            /* Enlaces del menú de navegación (era 0.9rem) */
+    --tamano-fuente-opciones: 1.15rem;       /* Enlaces del panel de usuario (era 0.9rem) */
+    --tamano-fuente-legend: 1.25rem;         /* Leyenda de agrupación de formulario (era 1rem) */
+    --tamano-fuente-label: 1.15rem;          /* Etiquetas de campos de formulario (era 0.9rem) */
+    --tamano-fuente-input: 1.15rem;          /* Campos input, select y textarea (era 0.925rem) */
+    --tamano-fuente-file: 1.05rem;           /* Selector de archivos (era 0.875rem) */
+    --tamano-fuente-file-btn: 1.05rem;       /* Botón del selector de archivos (era 0.85rem) */
+    --tamano-fuente-btn: 1.2rem;             /* Botones de acción y submit (era 0.95rem) */
+    --tamano-fuente-output: 1.15rem;         /* Insignias numéricas / DPI (era 0.9rem) */
+    --tamano-fuente-badge: 1.05rem;          /* Insignias y etiquetas pequeñas (era 0.85rem) */
+    --tamano-fuente-td: 1.15rem;             /* Celdas de tablas de datos (era 0.9rem) */
+    --tamano-fuente-caption: 1.35rem;        /* Título caption de tablas (era 1.1rem) */
+    --tamano-fuente-tabla-sm: 1.0rem;        /* Celdas de tabla en móvil (era 0.8rem) */
+    --tamano-fuente-footer: 1.05rem;         /* Texto del pie de página (era 0.85rem) */
+    --tamano-fuente-icono: 1.15em;           /* Iconos FontAwesome (era 0.95em) */
+    --tamano-fuente-print: 13pt;             /* Tipografía de impresión */
 
-    /* Bordes y sombras limpias */
+    /* Espaciados adaptados para letra grande */
+    --espacio-xs: 0.35rem;
+    --espacio-sm: 0.65rem;
+    --espacio-md: 1.15rem;
+    --espacio-lg: 1.75rem;
+    --espacio-xl: 2.25rem;
+
+    /* Bordes y sombras */
     --radio-borde: 8px;
     --radio-borde-sm: 4px;
-    --sombra-tarjeta: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-    --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --sombra-tarjeta: 0 2px 5px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    --sombra-elevada: 0 12px 20px -3px rgba(0, 0, 0, 0.12), 0 6px 8px -4px rgba(0, 0, 0, 0.06);
+    --sombra-foco: 0 0 0 3px rgba(15, 23, 42, 0.18);
 
-    /* Ancho máximo de página */
-    --ancho-maximo: 1240px;
+    /* Ancho máximo ligeramente ampliado para dar cabida a mayor volumen tipográfico */
+    --ancho-maximo: 1320px;
+}
+
+/* Ajustes estructurales para acomodar el mayor tamaño de texto */
+html {
+    font-size: var(--tamano-fuente-html) !important;
+}
+
+body {
+    line-height: 1.7 !important;
+}
+
+/* Espaciado interno cómodo en controles de formulario interactivos */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    padding: 0.75rem 1rem !important;
+}
+
+input[type="submit"],
+button {
+    padding: 0.8rem 1.8rem !important;
+}
+
+nav a {
+    padding: 0.6rem 1rem !important;
 }

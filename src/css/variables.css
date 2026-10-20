@@ -16,7 +16,22 @@
     --color-texto-suave: #64748b;       /* Texto atenuado para metadatos */
     --color-texto-claro: #ffffff;       /* Texto blanco sobre fondos oscuros */
     --color-borde: #e2e8f0;             /* Borde neutro sutil */
+    --color-borde-hover: #cbd5e1;       /* Borde al pasar cursor */
     --color-borde-foco: #0f172a;        /* Borde de foco */
+
+    /* Colores semánticos de componentes */
+    --color-cabecera: #0f172a;          /* Cabecera principal */
+    --color-cabecera-borde: #1e293b;    /* Borde inferior de cabecera */
+    --color-enlace: #0f172a;            /* Color base de enlaces */
+    --color-enlace-hover: #334155;      /* Color de enlaces en hover */
+    --color-input-fondo: #ffffff;       /* Fondo para controles de formulario */
+    --color-input-texto: #0f172a;       /* Texto dentro de controles */
+    --color-input-placeholder: #64748b; /* Placeholder */
+    --color-boton-fondo: #0f172a;       /* Botones principales y submit */
+    --color-boton-hover: #334155;       /* Hover de botones */
+    --color-boton-texto: #ffffff;       /* Texto de botones */
+    --color-pie: #0f172a;               /* Fondo del pie de página */
+    --color-pie-texto: #94a3b8;         /* Texto del pie de página */
 
     /* Tablas monocromáticas */
     --color-tabla-cabecera: linear-gradient(to bottom, #1e293b, #0f172a);
@@ -27,6 +42,35 @@
     /* Tipografía profesional */
     --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
     --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+    /* ==========================================================================
+       Escala Tipográfica Global (Font Sizes)
+       ========================================================================== */
+    --tamano-fuente-html: 16px;              /* Raíz del documento */
+    --tamano-fuente-base: 0.95rem;           /* Texto base del cuerpo y párrafos */
+    --tamano-fuente-h1: 1.5rem;              /* Título h1 principal y cabecera */
+    --tamano-fuente-h2: 1.3rem;              /* Subtítulos h2 de sección */
+    --tamano-fuente-h3: 1.1rem;              /* Títulos h3 y subtítulos */
+    --tamano-fuente-tarjeta-titulo: 1.1rem;  /* Título de tarjetas de inmuebles */
+    --tamano-fuente-tarjeta-texto: 0.875rem; /* Descripción y ubicación en tarjeta */
+    --tamano-fuente-precio: 1.25rem;         /* Precio destacado en anuncios */
+    --tamano-fuente-precio-lg: 1.35rem;      /* Precio destacado en ficha de detalle */
+    --tamano-fuente-nav: 0.9rem;             /* Enlaces del menú de navegación */
+    --tamano-fuente-opciones: 0.9rem;        /* Enlaces del panel de usuario */
+    --tamano-fuente-legend: 1rem;            /* Leyenda de agrupación de formulario */
+    --tamano-fuente-label: 0.9rem;           /* Etiquetas de campos de formulario */
+    --tamano-fuente-input: 0.925rem;         /* Campos input, select y textarea */
+    --tamano-fuente-file: 0.875rem;          /* Selector de archivos */
+    --tamano-fuente-file-btn: 0.85rem;       /* Botón del selector de archivos */
+    --tamano-fuente-btn: 0.95rem;            /* Botones de acción y submit */
+    --tamano-fuente-output: 0.9rem;          /* Insignias de datos numéricos (DPI) */
+    --tamano-fuente-badge: 0.85rem;          /* Insignias y etiquetas pequeñas */
+    --tamano-fuente-td: 0.9rem;              /* Celdas de tablas de datos */
+    --tamano-fuente-caption: 1.1rem;         /* Título caption de tablas */
+    --tamano-fuente-tabla-sm: 0.8rem;        /* Celdas de tabla en vista móvil */
+    --tamano-fuente-footer: 0.85rem;         /* Texto del pie de página */
+    --tamano-fuente-icono: 0.95em;           /* Iconos de fuentes FontAwesome */
+    --tamano-fuente-print: 11pt;             /* Tamaño optimizado para impresión */
 
     /* Espaciados */
     --espacio-xs: 0.25rem;
@@ -40,6 +84,7 @@
     --radio-borde-sm: 4px;
     --sombra-tarjeta: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
     --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --sombra-foco: 0 0 0 3px rgba(15, 23, 42, 0.12);
 
     /* Ancho máximo de página */
     --ancho-maximo: 1240px;

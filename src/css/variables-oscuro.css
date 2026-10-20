@@ -1,32 +1,76 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-   Variables CSS - Proyecto DAW (HabitaQ)
-   Paleta monocromática elegante, profesional y minimalista
+   Variables CSS - Proyecto DAW (HabitaQ) - Versión Tema Oscuro / Modo Noche
+   Paleta nocturna profunda, descanso visual y alto contraste sin estridencias
    ========================================================================== */
 
 :root {
-    /* Paleta de colores sobria y profesional (3-5 colores) */
-    --color-primario: #f1f5f9;          /* Pizarra oscuro / casi negro */
-    --color-primario-suave: #cbd5e1;    /* Pizarra intermedio */
-    --color-secundario: #94a3b8;        /* Gris pizarra para elementos secundarios */
-    --color-fondo: #0f172a;             /* Fondo blanco roto / gris muy claro */
-    --color-superficie: #1e293b;        /* Blanco puro para tarjetas y formularios */
-    --color-texto: #f8fafc;             /* Texto principal oscuro de alto contraste */
-    --color-texto-suave: #94a3b8;       /* Texto atenuado para metadatos */
-    --color-texto-claro: #0f172a;       /* Texto blanco sobre fondos oscuros */
-    --color-borde: #334155;             /* Borde neutro sutil */
-    --color-borde-foco: #f8fafc;        /* Borde de foco */
+    /* Paleta cromática modo oscuro (Slate / Azul Medianoche) */
+    --color-primario: #38bdf8;          /* Azul cielo para acentos y elementos activos */
+    --color-primario-suave: #0284c7;    /* Azul intermedio para contrastes secundarios */
+    --color-secundario: #94a3b8;        /* Gris pizarra para textos atenuados */
+    --color-fondo: #0f172a;             /* Pizarra profundo para el fondo general */
+    --color-superficie: #1e293b;        /* Pizarra medio para tarjetas, aside y secciones */
+    --color-texto: #f8fafc;             /* Blanco nítido para títulos y texto principal */
+    --color-texto-suave: #94a3b8;       /* Gris pizarra para metadatos y fechas */
+    --color-texto-claro: #ffffff;       /* Blanco puro sobre fondos destacados */
+    --color-borde: #334155;             /* Borde oscuro bien delimitado */
+    --color-borde-hover: #475569;       /* Borde al pasar el ratón */
+    --color-borde-foco: #38bdf8;        /* Anillo de foco accesible */
 
-    /* Tablas monocromáticas */
-    --color-tabla-cabecera: #1e293b;
-    --color-fila-impar: #0f172a;
-    --color-fila-par: #1e293b;
-    --color-fila-hover: #334155;
+    /* Colores semánticos */
+    --color-cabecera: #020617;          /* Cabecera superior casi negra */
+    --color-cabecera-borde: #1e293b;    /* Separador sutil */
+    --color-enlace: #38bdf8;            /* Enlaces de alto contraste en fondo oscuro */
+    --color-enlace-hover: #7dd3fc;      /* Hover de enlaces iluminado */
+    --color-input-fondo: #0b0f19;       /* Fondo de inputs más oscuro para efecto hendido */
+    --color-input-texto: #f8fafc;       /* Texto legible en inputs */
+    --color-input-placeholder: #64748b; /* Placeholder sutil */
+    --color-boton-fondo: #2563eb;       /* Botones llamativos y accesibles */
+    --color-boton-hover: #1d4ed8;       /* Hover de botones */
+    --color-boton-texto: #ffffff;       /* Texto blanco de botones */
+    --color-pie: #020617;               /* Pie de página oscuro a juego */
+    --color-pie-texto: #94a3b8;         /* Texto del pie de página */
+
+    /* Tablas en modo oscuro */
+    --color-tabla-cabecera: linear-gradient(to bottom, #1e293b, #0f172a);
+    --color-fila-impar: #1e293b;
+    --color-fila-par: #162032;
+    --color-fila-hover: #283548;
 
     /* Tipografía profesional */
     --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
     --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+    /* ==========================================================================
+       Escala Tipográfica Global
+       ========================================================================== */
+    --tamano-fuente-html: 16px;
+    --tamano-fuente-base: 0.95rem;
+    --tamano-fuente-h1: 1.5rem;
+    --tamano-fuente-h2: 1.3rem;
+    --tamano-fuente-h3: 1.1rem;
+    --tamano-fuente-tarjeta-titulo: 1.1rem;
+    --tamano-fuente-tarjeta-texto: 0.875rem;
+    --tamano-fuente-precio: 1.25rem;
+    --tamano-fuente-precio-lg: 1.35rem;
+    --tamano-fuente-nav: 0.9rem;
+    --tamano-fuente-opciones: 0.9rem;
+    --tamano-fuente-legend: 1rem;
+    --tamano-fuente-label: 0.9rem;
+    --tamano-fuente-input: 0.925rem;
+    --tamano-fuente-file: 0.875rem;
+    --tamano-fuente-file-btn: 0.85rem;
+    --tamano-fuente-btn: 0.95rem;
+    --tamano-fuente-output: 0.9rem;
+    --tamano-fuente-badge: 0.85rem;
+    --tamano-fuente-td: 0.9rem;
+    --tamano-fuente-caption: 1.1rem;
+    --tamano-fuente-tabla-sm: 0.8rem;
+    --tamano-fuente-footer: 0.85rem;
+    --tamano-fuente-icono: 0.95em;
+    --tamano-fuente-print: 11pt;
 
     /* Espaciados */
     --espacio-xs: 0.25rem;
@@ -35,12 +79,103 @@
     --espacio-lg: 1.5rem;
     --espacio-xl: 2rem;
 
-    /* Bordes y sombras limpias */
+    /* Bordes y sombras adaptadas para modo oscuro */
     --radio-borde: 8px;
     --radio-borde-sm: 4px;
-    --sombra-tarjeta: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
-    --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    --sombra-tarjeta: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --sombra-elevada: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+    --sombra-foco: 0 0 0 3px rgba(56, 189, 248, 0.35);
 
     /* Ancho máximo de página */
     --ancho-maximo: 1240px;
+}
+
+/* ==========================================================================
+   Ajustes y Reglas Específicas para Tema Oscuro
+   ========================================================================== */
+
+/* Resaltado suave del logotipo en cabecera oscura */
+body > header img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Enlaces en el cuerpo principal */
+main a {
+    color: var(--color-enlace);
+}
+
+main a:hover {
+    color: var(--color-enlace-hover);
+}
+
+/* Enlaces del panel de usuario y botones de enlace */
+.conBorde {
+    border-color: var(--color-borde) !important;
+    background-color: var(--color-superficie) !important;
+    color: var(--color-texto) !important;
+}
+
+.conBorde:hover {
+    border-color: var(--color-primario) !important;
+}
+
+/* Formularios: campos de entrada en tema oscuro */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    background-color: var(--color-input-fondo) !important;
+    color: var(--color-input-texto) !important;
+    border-color: var(--color-borde) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--color-input-placeholder) !important;
+    opacity: 1;
+}
+
+/* Selector de archivos */
+input[type="file"] {
+    background-color: var(--color-input-fondo) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto-suave) !important;
+}
+
+input[type="file"]:hover {
+    border-color: var(--color-primario) !important;
+    background-color: var(--color-superficie) !important;
+}
+
+/* Tablas en modo oscuro */
+thead th,
+tfoot th,
+tfoot td {
+    background: var(--color-tabla-cabecera) !important;
+    color: var(--color-texto-claro) !important;
+    border-color: var(--color-borde) !important;
+}
+
+/* Celdas con borde oscuro */
+th, td {
+    border-color: var(--color-borde) !important;
+}
+
+/* Insignias de la ficha de detalle */
+main > article > header p {
+    background-color: var(--color-fondo) !important;
+    border-color: var(--color-borde) !important;
+    color: var(--color-texto) !important;
+}
+
+/* Botón de volver / saltar-a */
+.saltar-a {
+    background-color: var(--color-superficie) !important;
+    color: var(--color-texto) !important;
+    border-color: var(--color-primario) !important;
 }

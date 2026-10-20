@@ -32,6 +32,33 @@
     --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
     --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
 
+    /* Escala Tipográfica Global */
+    --tamano-fuente-html: 16px;
+    --tamano-fuente-base: 0.95rem;
+    --tamano-fuente-h1: 1.5rem;
+    --tamano-fuente-h2: 1.3rem;
+    --tamano-fuente-h3: 1.1rem;
+    --tamano-fuente-tarjeta-titulo: 1.1rem;
+    --tamano-fuente-tarjeta-texto: 0.875rem;
+    --tamano-fuente-precio: 1.25rem;
+    --tamano-fuente-precio-lg: 1.35rem;
+    --tamano-fuente-nav: 0.9rem;
+    --tamano-fuente-opciones: 0.9rem;
+    --tamano-fuente-legend: 1rem;
+    --tamano-fuente-label: 0.9rem;
+    --tamano-fuente-input: 0.925rem;
+    --tamano-fuente-file: 0.875rem;
+    --tamano-fuente-file-btn: 0.85rem;
+    --tamano-fuente-btn: 0.95rem;
+    --tamano-fuente-output: 0.9rem;
+    --tamano-fuente-badge: 0.85rem;
+    --tamano-fuente-td: 0.9rem;
+    --tamano-fuente-caption: 1.1rem;
+    --tamano-fuente-tabla-sm: 0.8rem;
+    --tamano-fuente-footer: 0.85rem;
+    --tamano-fuente-icono: 0.95em;
+    --tamano-fuente-print: 11pt;
+
     /* Espaciados */
     --espacio-xs: 0.25rem;
     --espacio-sm: 0.5rem;

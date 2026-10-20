@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Alias de compatibilidad: temaoscuro.css -> variables-oscuro.css
+   ========================================================================== */
+
+@import url("variables-oscuro.css");
