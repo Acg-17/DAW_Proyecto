@@ -22,6 +22,20 @@
     --color-borde: #FFFF00;             /* Bordes amarillos bien definidos */
     --color-borde-foco: #00FFFF;        /* Foco en cian eléctrico */
 
+    /* Colores semánticos de componentes */
+    --color-cabecera: #FFFF00;          /* Cabecera principal */
+    --color-cabecera-borde: #cbcb04;    /* Borde inferior de cabecera */
+    --color-enlace: #FFFF00;            /* Color base de enlaces */
+    --color-enlace-hover: #00FFFF;      /* Color de enlaces en hover */
+    --color-input-fondo: #121212;       /* Fondo para controles de formulario */
+    --color-input-texto: #fcf8f8;       /* Texto dentro de controles */
+    --color-input-placeholder: #c6c4c4; /* Placeholder */
+    --color-boton-fondo: #FFFF00;       /* Botones principales y submit */
+    --color-boton-hover: #00FFFF;       /* Hover de botones */
+    --color-boton-texto: #000000;       /* Texto de botones */
+    --color-pie: #FFFF00;               /* Fondo del pie de página */
+    --color-pie-texto: #000000;         /* Texto del pie de página */
+
     /* Tablas de alto contraste */
     --color-tabla-cabecera: #FFFF00;
     --color-fila-impar: #1A1A1A;
@@ -78,20 +92,4 @@
 
 body > header img {
     filter: brightness(0);
-}
-
-input, select, textarea {
-    color: #fcf8f8 !important;
-    background-color: #121212 !important;
-    border: 2px solid #FFFF00 !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: #c6c4c4 !important;
-    opacity: 1; 
-}
-
-thead th, tfoot th, tfoot td {
-    background-color: var(--color-tabla-cabecera) !important;
 }
