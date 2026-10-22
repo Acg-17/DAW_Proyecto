@@ -14,7 +14,8 @@
     <link rel="alternate stylesheet" type="text/css" href="../css/contraste-letra-grande.css" title="Estilo de alto contraste y tamaño grande">
     <link rel="alternate stylesheet" type="text/css" href="../css/impresion.css" media="screen" title="Estilo para impresión">
     <link rel="stylesheet" type="text/css" href="../css/impresion.css" media="print">
-        <script>
+
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             var slider = document.getElementById("res");
             var output = document.getElementById("resValor");
@@ -46,12 +47,12 @@
 
     <main id="contenido-principal">
         <section>
-            <h2><i class="fa-solid fa-print" role="img" aria-label="ImpresiÃ³n"></i> Solicitud de impresión de folleto publicitario</h2>
-            <p>Mediante esta opciÃ³n puedes solicitar la impresión y envÃ­o postal de uno de tus anuncios a todo color y a mÃ¡xima resoluciÃ³n.</p>
+            <h2><i class="fa-solid fa-print" role="img" aria-label="Impresión"></i> Solicitud de impresión de folleto publicitario</h2>
+            <p>Mediante esta opción puedes solicitar la impresión y envío postal de uno de tus anuncios a todo color y a máxima resolución.</p>
 
             <h3>Tarifas Vigentes</h3>
             <table>
-                <caption>Tarifas de impresión y envÃ­o</caption>
+                <caption>Tarifas de impresión y envío</caption>
                 <thead>
                     <tr>
                         <th scope="col">Concepto</th>
@@ -60,36 +61,36 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Coste procesamiento y envÃ­o base</td>
-                        <td>10 â¬</td>
+                        <td>Coste procesamiento y envío base</td>
+                        <td>10 €</td>
                     </tr>
                     <tr>
-                        <td>Menos de 5 pÃ¡ginas (&lt; 5)</td>
-                        <td>2.0 â¬ por pÃ¡g.</td>
+                        <td>Menos de 5 páginas (&lt; 5)</td>
+                        <td>2.0 € por pág.</td>
                     </tr>
                     <tr>
-                        <td>Entre 5 y 10 pÃ¡ginas</td>
-                        <td>1.8 â¬ por pÃ¡g.</td>
+                        <td>Entre 5 y 10 páginas</td>
+                        <td>1.8 € por pág.</td>
                     </tr>
                     <tr>
-                        <td>MÃ¡s de 10 pÃ¡ginas (&gt; 10)</td>
-                        <td>1.6 â¬ por pÃ¡g.</td>
+                        <td>Más de 10 páginas (&gt; 10)</td>
+                        <td>1.6 € por pág.</td>
                     </tr>
                     <tr>
                         <td>Blanco y negro</td>
-                        <td>0.0 â¬ (incluido)</td>
+                        <td>0.0 € (incluido)</td>
                     </tr>
                     <tr>
                         <td>Color</td>
-                        <td>0.5 â¬ por foto</td>
+                        <td>0.5 € por foto</td>
                     </tr>
                     <tr>
-                        <td>ResoluciÃ³n &le; 300 dpi</td>
-                        <td>0.0 â¬ (incluido)</td>
+                        <td>Resolución &le; 300 dpi</td>
+                        <td>0.0 € (incluido)</td>
                     </tr>
                     <tr>
-                        <td>ResoluciÃ³n &gt; 300 dpi</td>
-                        <td>0.2 â¬ por foto</td>
+                        <td>Resolución &gt; 300 dpi</td>
+                        <td>0.2 € por foto</td>
                     </tr>
                 </tbody>
             </table>
@@ -101,21 +102,21 @@
 
             <form action="respuestaFolleto.html" method="get">
                 <fieldset>
-                    <legend>InformaciÃ³n personal</legend>
+                    <legend>Información personal</legend>
 
                     <label for="nombre">Nombre completo: *</label>
                     <input type="text" id="nombre" name="nombre" maxlength="200" required placeholder="Tu nombre y apellidos">
 
-                    <label for="email">&#9993; Correo electrÃ³nico: *</label>
+                    <label for="email">&#9993; Correo electrónico: *</label>
                     <input type="email" id="email" name="email" maxlength="200" required placeholder="correo@ejemplo.com">
 
                     <fieldset>
-                        <legend>DirecciÃ³n de entrega</legend>
+                        <legend>Dirección de entrega</legend>
                         
                         <label for="calle">Calle / Avenida: *</label>
                         <input type="text" id="calle" name="calle" required>
 
-                        <label for="numero">NÃºmero: *</label>
+                        <label for="numero">Número: *</label>
                         <input type="text" id="numero" name="numero" required>
 
                         <label for="portal">Portal:</label>
@@ -127,7 +128,7 @@
                         <label for="letra">Letra / Puerta:</label>
                         <input type="text" id="letra" name="letra">
 
-                        <label for="cp">CÃ³digo Postal: *</label>
+                        <label for="cp">Código Postal: *</label>
                         <input type="text" id="cp" name="cp" required pattern="[0-9]{5}">
 
                         <label for="localidad">Localidad / Municipio: *</label>
@@ -137,20 +138,20 @@
                         <input type="text" id="provincia" name="provincia" required>
                     </fieldset>
 
-                    <label for="tel">&#9742; TelÃ©fono de contacto:</label>
+                    <label for="tel">&#9742; Teléfono de contacto:</label>
                     <input type="tel" id="tel" name="tel" placeholder="+34 600 000 000">
                 </fieldset>
 
                 <fieldset>
-                    <legend>ConfiguraciÃ³n del folleto</legend>
+                    <legend>Configuración del folleto</legend>
 
                     <label for="col">Color de la portada:</label>
                     <input type="color" id="col" name="col" value="#0f172a">
 
-                    <label for="copias">NÃºmero de copias (1 - 99): *</label>
+                    <label for="copias">Número de copias (1 - 99): *</label>
                     <input type="number" id="copias" name="copias" min="1" max="99" value="1" required>
 
-                    <label for="res">ResoluciÃ³n de las fotos: <output id="resValor" for="res">150 DPI</output></label>
+                    <label for="res">Resolución de las fotos: <output id="resValor" for="res">150 DPI</output></label>
                     <input type="range" id="res" name="res" min="150" max="900" step="150" value="150" list="valoresRes">
                     <datalist id="valoresRes">
                         <option value="150" label="150 DPI"></option>
@@ -163,23 +164,23 @@
 
                     <label for="anuncio">Anuncio a imprimir: *</label>
                     <select name="anuncio" id="anuncio" required>
-                        <option value="" disabled selected>Selecciona una opciÃ³n</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
                         <option value="Casa moderna con jardín">Casa moderna con jardín</option>
                         <option value="Chalet junto al mar">Chalet junto al mar</option>
                         <option value="Casa rural de montaña">Casa rural de montaña</option>
                     </select>
 
-                    <label for="fecha">Fecha lÃ­mite deseada de recepción:</label>
+                    <label for="fecha">Fecha límite deseada de recepción:</label>
                     <input type="date" id="fecha" name="fecha">
 
                     <fieldset>
                         <legend>Opciones adicionales</legend>
 
                         <label for="color">
-                            <input type="checkbox" id="color" name="color"> ImpresiÃ³n a color
+                            <input type="checkbox" id="color" name="color"> Impresión a color
                         </label>
                         <label for="precio">
-                            <input type="checkbox" id="precio" name="precio"> ImpresiÃ³n del precio en el folleto
+                            <input type="checkbox" id="precio" name="precio"> Impresión del precio en el folleto
                         </label>
                     </fieldset>
 

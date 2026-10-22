@@ -14,7 +14,8 @@
     <link rel="alternate stylesheet" type="text/css" href="../css/contraste-letra-grande.css" title="Estilo de alto contraste y tamaño grande">
     <link rel="alternate stylesheet" type="text/css" href="../css/impresion.css" media="screen" title="Estilo para impresión">
     <link rel="stylesheet" type="text/css" href="../css/impresion.css" media="print">
-        </head>
+
+</head>
 
 <body>
     <!-- Enlace accesible de salto al contenido principal -->
@@ -36,26 +37,26 @@
     <main id="contenido-principal">
         <section>
             <h2><i class="fa-solid fa-user-plus" role="img" aria-label="Registro"></i> Crear una Cuenta</h2>
-            <p>Ãnete a HabitaQ para publicar anuncios y contactar con propietarios de forma directa. Los campos marcados con asterisco (*) son obligatorios.</p>
+            <p>Únete a HabitaQ para publicar anuncios y contactar con propietarios de forma directa. Los campos marcados con asterisco (*) son obligatorios.</p>
             <form method="get" action="indexRegistrado.html">
                 <fieldset>
                     <legend>Datos de acceso y personales</legend>
 
                     <label for="usuario">Nombre de usuario: *</label>
-                    <input type="text" id="usuario" name="usuario" pattern="[A-Za-z][A-Za-z0-9]{2,14}" minlength="3" maxlength="15" required placeholder="Tu nombre (3-15 CarÃ¡cteres)">
+                    <input type="text" id="usuario" name="usuario" pattern="[A-Za-z][A-Za-z0-9]{2,14}" minlength="3" maxlength="15" required placeholder="Tu nombre (3-15 Carácteres)">
 
                     <label for="password">Contraseña: *</label>
-                    <input type="password" id="password" name="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_-]{6,15}" minlength="6" maxlength="15" required placeholder="MÃ­nimo 6 caracteres, Incluir mayÃºscula y NÃºmero">
+                    <input type="password" id="password" name="password" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_-]{6,15}" minlength="6" maxlength="15" required placeholder="Mínimo 6 caracteres, Incluir mayúscula y Número">
 
-                    <label for="repPass">Repetir contraseÃ±a: *</label>
+                    <label for="repPass">Repetir contraseña: *</label>
                     <input type="password" id="repPass" name="repPass" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9_-]{6,15}" minlength="6" maxlength="15" required>
 
-                    <label for="email">DirecciÃ³n de correo electrÃ³nico: *</label>
+                    <label for="email">Dirección de correo electrónico: *</label>
                     <input type="email" id="email" name="email" pattern="[A-Za-z0-9!#$%&'*+\-/=?^_`{|}~]+(\.[A-Za-z0-9!#$%&'*+\-/=?^_`{|}~]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*" maxlength="254" required placeholder="nombre@correo.com">
 
                     <label for="sexo">Sexo: *</label>
                     <select name="sexo" id="sexo" required>
-                        <option value="" disabled selected>Selecciona una opciÃ³n</option>
+                        <option value="" disabled selected>Selecciona una opción</option>
                         <option value="Hombre">Hombre</option>
                         <option value="Mujer">Mujer</option>
                         <option value="Otro">Otro</option>
@@ -68,16 +69,16 @@
                     <label for="city">Ciudad: *</label>
                     <input type="text" name="city" id="city" required placeholder="Introduce tu ciudad">
 
-                    <label for="country">PaÃ­s de residencia: *</label>
+                    <label for="country">País de residencia: *</label>
                     <select name="country" id="country" required>
                         <option value="Alemania">Alemania</option>
                         <option value="Australia">Australia</option>
-                        <option value="CanadÃ¡">CanadÃ¡</option>
+                        <option value="Canadá">Canadá</option>
                         <option value="España" selected>España</option>
                         <option value="Estados Unidos">Estados Unidos</option>
                         <option value="Francia">Francia</option>
                         <option value="Italia">Italia</option>
-                        <option value="JapÃ³n">JapÃ³n</option>
+                        <option value="Japón">Japón</option>
                         <option value="Portugal">Portugal</option>
                         <option value="Reino Unido">Reino Unido</option>
                     </select>
