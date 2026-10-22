@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Modo Noche - HabitaQ (Práctica 5: CSS 2)
+   Reutiliza estilos.css redefiniendo variables de bajo brillo
+   ========================================================================== */
+
+@import url("estilos.css");
+
+:root {
+    --color-primario: #0b1120;
+    --color-primario-suave: #1e293b;
+    --color-secundario: #475569;
+    --color-fondo: #0f172a;
+    --color-superficie: #1e293b;
+    --color-texto: #e2e8f0;
+    --color-texto-suave: #94a3b8;
+    --color-texto-claro: #f8fafc;
+    --color-borde: #334155;
+    --color-borde-foco: #38bdf8;
+
+    --color-tabla-cabecera: #0b1120;
+    --color-fila-impar: #1e293b;
+    --color-fila-par: #162032;
+    --color-fila-hover: #27364f;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+a {
+    color: #38bdf8;
+}
+
+a:hover {
+    color: #7dd3fc;
+}
+
+input[type="submit"],
+button,
+.conBorde {
+    background-color: #0284c7;
+    color: #ffffff;
+    border-color: #38bdf8;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0369a1;
+}
+
+thead th, tfoot th, tfoot td {
+    background: #0b1120;
+    color: #f8fafc;
+}

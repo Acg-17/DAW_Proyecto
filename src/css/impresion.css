@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Hoja de Estilo para Impresión - HabitaQ (Práctica 5: CSS 2)
+   Requisitos: Unidades pt/cm, serif >=12pt, negro sobre blanco,
+   ocultar navegación/login/botones, mostrar URLs y recibo de folleto.
+   ========================================================================== */
+
+@page {
+    size: A4 portrait;
+    margin: 2cm 1.5cm;
+}
+
+html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: 'Times New Roman', Times, Georgia, serif !important;
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+}
+
+p, article, section, table {
+    orphans: 3;
+    widows: 3;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, Georgia, serif !important;
+    color: #000000 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Ocultar elementos superfluos para papel */
+body > header nav,
+body > main > header,
+aside,
+.saltar-a,
+input[type="submit"],
+button,
+i.fa-solid,
+i.fa-regular,
+section:has(> p > a[href*="index"]),
+section:has(> p > a[href*="menuUsuario"]) {
+    display: none !important;
+}
+
+/* Cabecera para impresión */
+body > header {
+    background: transparent !important;
+    color: #000000 !important;
+    border-bottom: 2pt solid #000000 !important;
+    padding-bottom: 10pt !important;
+    margin-bottom: 15pt !important;
+    display: block !important;
+}
+
+body > header > a:first-child {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10pt !important;
+    color: #000000 !important;
+}
+
+body > header img {
+    width: 45pt !important;
+    height: auto !important;
+}
+
+/* Mostrar URL en enlaces informativos */
+a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+}
+
+main a[href]:not([href^="#"]):not([href^="javascript:"]):not(:has(img)):after {
+    content: " [" attr(href) "]";
+    font-size: 10pt;
+    font-style: italic;
+}
+
+/* Anuncios y fichas */
+article.anuncio,
+article {
+    border: 1pt solid #666666 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    margin-bottom: 12pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+/* Justificante / Recibo oficial para respuestaFolleto.html */
+section:has(fieldset) {
+    border: 2pt solid #000000 !important;
+    padding: 15pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+section:has(fieldset)::before {
+    content: "JUSTIFICANTE OFICIAL DE SOLICITUD DE FOLLETO • HABITAQ";
+    display: block;
+    font-weight: bold;
+    border-bottom: 1pt solid #000000;
+    padding-bottom: 6pt;
+    margin-bottom: 10pt;
+    text-align: center;
+}
+
+fieldset {
+    border: 1pt solid #000000 !important;
+    background: #ffffff !important;
+}
+
+fieldset input[type="color"] {
+    display: none !important;
+}
+
+/* Tablas */
+table, tr, th, td {
+    border: 1pt solid #000000 !important;
+    border-collapse: collapse !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+thead th {
+    background-color: #eeeeee !important;
+    color: #000000 !important;
+}
+
+footer {
+    background: transparent !important;
+    border-top: 1pt solid #000000 !important;
+    color: #000000 !important;
+    margin-top: 20pt !important;
+    text-align: center !important;
+}

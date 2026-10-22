@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Alto Contraste - HabitaQ (Práctica 5: CSS 2)
+   Contraste WCAG AAA (>7:1): Fondo negro (#000) con texto blanco y amarillo
+   ========================================================================== */
+
+@import url("estilos.css");
+
+:root {
+    --color-primario: #000000;
+    --color-primario-suave: #222222;
+    --color-secundario: #ffffff;
+    --color-fondo: #000000;
+    --color-superficie: #000000;
+    --color-texto: #ffffff;
+    --color-texto-suave: #ffff00;
+    --color-texto-claro: #ffffff;
+    --color-borde: #ffffff;
+    --color-borde-foco: #ffff00;
+
+    --color-tabla-cabecera: #000000;
+    --color-fila-impar: #000000;
+    --color-fila-par: #111111;
+    --color-fila-hover: #222222;
+}
+
+body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+a {
+    color: #ffff00 !important;
+    text-decoration: underline 2px solid #ffff00 !important;
+}
+
+a:hover {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffff00 !important;
+}
+
+nav a {
+    border: 2px solid #ffffff !important;
+    color: #ffffff !important;
+}
+
+nav a:hover {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #ffff00 !important;
+}
+
+article.anuncio,
+article,
+aside,
+fieldset {
+    border: 2px solid #ffffff !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    border: 2px solid #ffffff !important;
+}
+
+input[type="submit"],
+button,
+.conBorde {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+input[type="submit"]:hover,
+button:hover,
+.conBorde:hover {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+table, tr, th, td {
+    border: 2px solid #ffffff !important;
+}

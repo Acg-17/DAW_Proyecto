@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Alto Contraste y Tamaño Grande - HabitaQ (Práctica 5: CSS 2)
+   Combina WCAG AAA con tipografía ampliada 'Atkinson Hyperlegible'
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("alto-contraste.css");
+
+:root {
+    --fuente-titulos: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    --fuente-cuerpo: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+html {
+    font-size: 20px !important;
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif !important;
+    line-height: 1.8 !important;
+}
+
+p, li, dd, dt, blockquote, label {
+    max-width: 80ch !important;
+    margin-bottom: 1.25rem !important;
+    text-align: left !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif !important;
+    text-align: left !important;
+}
+
+h1 { font-size: 2.2rem !important; }
+h2 { font-size: 1.8rem !important; }
+h3 { font-size: 1.4rem !important; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif !important;
+    font-size: 1.05rem !important;
+    min-height: 48px;
+}
+
+input[type="submit"],
+button,
+.conBorde {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif !important;
+    font-size: 1.1rem !important;
+    min-height: 48px;
+}

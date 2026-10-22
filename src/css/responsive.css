@@ -67,7 +67,7 @@
 
     th, td {
         padding: 8px 10px;
-        font-size: var(--tamano-fuente-tabla-sm);
+        font-size: 0.8rem;
     }
 }
 
@@ -168,7 +168,7 @@
     body {
         background: #ffffff;
         color: #000000;
-        font-size: var(--tamano-fuente-print);
+        font-size: 11pt;
     }
 
     body > header nav,

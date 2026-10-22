@@ -46,7 +46,7 @@ th {
 
 td {
     letter-spacing: 0.25px;
-    font-size: var(--tamano-fuente-td);
+    font-size: 0.9rem;
 }
 
 tbody td {
@@ -60,7 +60,7 @@ tfoot th {
 
 caption {
     font-variant: small-caps;
-    font-size: var(--tamano-fuente-caption);
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-texto);
     padding: var(--espacio-sm) 0;
@@ -74,9 +74,9 @@ thead, tfoot {
 }
 
 thead th, tfoot th, tfoot td {
-    background: var(--color-tabla-cabecera);
+    background: linear-gradient(to bottom, var(--color-primario-suave), var(--color-primario));
     color: var(--color-texto-claro);
-    border-color: var(--color-borde);
+    border-color: var(--color-secundario);
 }
 
 /* Estilo cebra */

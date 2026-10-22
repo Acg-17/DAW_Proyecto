@@ -22,7 +22,7 @@ section:has(> a > article) > p:first-of-type {
     text-align: center;
     margin-top: 0;
     margin-bottom: 1.5rem;
-    font-size: var(--tamano-fuente-base);
+    font-size: 0.95rem;
     color: var(--color-texto-suave);
 }
 
@@ -50,7 +50,7 @@ article {
 section > a:has(> article):hover article {
     transform: translateY(-4px);
     box-shadow: var(--sombra-elevada);
-    border-color: var(--color-borde-hover, var(--color-secundario));
+    border-color: var(--color-secundario);
 }
 
 /* Imagen de la tarjeta */
@@ -66,7 +66,7 @@ article > a > img {
 /* Título de la tarjeta */
 article > h2,
 article > h3 {
-    font-size: var(--tamano-fuente-tarjeta-titulo);
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-texto);
     margin: 1rem 1.25rem 0.35rem 1.25rem;
@@ -76,7 +76,7 @@ article > h3 {
 /* Detalles y ubicación */
 article > p {
     margin: 0 1.25rem 0.5rem 1.25rem;
-    font-size: var(--tamano-fuente-tarjeta-texto);
+    font-size: 0.875rem;
     color: var(--color-texto-suave);
     line-height: 1.5;
 }
@@ -85,7 +85,7 @@ article > p {
 article > p:last-child {
     margin-top: auto;
     margin-bottom: 1.25rem;
-    font-size: var(--tamano-fuente-precio);
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-texto);
 }
@@ -113,7 +113,7 @@ main > article > header p {
     border: 1px solid var(--color-borde);
     padding: var(--espacio-xs) var(--espacio-sm);
     border-radius: var(--radio-borde-sm);
-    font-size: var(--tamano-fuente-badge);
+    font-size: 0.85rem;
     font-weight: 600;
     margin: 0;
 }
@@ -128,12 +128,12 @@ main > article > img:nth-of-type(1) {
 }
 
 main > article h2 {
-    font-size: var(--tamano-fuente-h1);
+    font-size: 1.5rem;
     margin-bottom: 0.25rem;
 }
 
 main > article h3 {
-    font-size: var(--tamano-fuente-precio-lg);
+    font-size: 1.35rem;
     color: var(--color-texto);
     font-weight: 700;
     margin-bottom: var(--espacio-md);
@@ -167,18 +167,18 @@ main > article a[href="mensaje.html"] {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--color-boton-fondo, var(--color-primario));
-    color: var(--color-boton-texto, var(--color-texto-claro));
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
     padding: 0.75rem 1.5rem;
     border-radius: var(--radio-borde-sm);
     font-weight: 600;
-    font-size: var(--tamano-fuente-btn);
+    font-size: 0.95rem;
     text-decoration: none;
     transition: background-color 0.2s ease;
 }
 
 main > article a[href="mensaje.html"]:hover {
-    background-color: var(--color-boton-hover, var(--color-secundario));
+    background-color: var(--color-secundario);
     text-decoration: none;
 }
 
@@ -191,7 +191,7 @@ section > p:has(> a[href*=".html"]) a {
     border: 1px solid var(--color-borde);
     border-radius: var(--radio-borde-sm);
     font-weight: 500;
-    font-size: var(--tamano-fuente-opciones);
+    font-size: 0.9rem;
     color: var(--color-texto);
     background-color: var(--color-superficie);
     transition: all 0.2s ease;
