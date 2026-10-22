@@ -14,11 +14,7 @@
     <link rel="alternate stylesheet" type="text/css" href="../css/contraste-letra-grande.css" title="Estilo de alto contraste y tamaño grande">
     <link rel="alternate stylesheet" type="text/css" href="../css/impresion.css" media="screen" title="Estilo para impresión">
     <link rel="stylesheet" type="text/css" href="../css/impresion.css" media="print">
-    
-    <!-- Hoja de estilo preferida (predeterminada) -->
-    <!-- Hojas de estilo alternativas para pantalla -->
-    <!-- Hoja de estilo para dispositivo de impresión (sin atributo title) -->
-    </head>
+</head>
 
 <body>
     <!-- Enlace accesible de salto al contenido principal -->
@@ -38,124 +34,39 @@
     </header>
 
     <main id="contenido-principal">
-        <article>
-            <header>
-                <h2><i class="fa-solid fa-universal-access" role="img" aria-label="Accesibilidad"></i> Declaración de Accesibilidad</h2>
-                <p>Compromiso con el acceso universal a la información inmobiliaria digital</p>
-            </header>
+        <section>
+            <h2>Declaración de Accesibilidad</h2>
+            <p>HabitaQ está comprometido con la accesibilidad universal conforme a las pautas WCAG 2.1 (Niveles AA y AAA) y las Directivas (UE) 2016/2102 y 2019/882.</p>
 
-            <section>
-                <h3>1. Compromiso y Situación de Cumplimiento</h3>
-                <p>
-                    <strong>HabitaQ</strong> está firmemente comprometido con garantizar la accesibilidad digital de su sitio web para todas las personas, independientemente de sus capacidades físicas, sensoriales o cognitivas, así como de las características técnicas de sus dispositivos de navegación.
-                </p>
-                <p>
-                    Este sitio web ha sido diseñado y desarrollado conforme a las pautas establecidas por la <strong>Directiva (UE) 2016/2102</strong> del Parlamento Europeo y del Consejo, la <strong>Directiva (UE) 2019/882</strong> (Acta Europea de Accesibilidad), la norma técnica <strong>UNE-EN 301549:2022</strong> y las <strong>Pautas de Accesibilidad para el Contenido Web (WCAG 2.1)</strong> publicadas por el World Wide Web Consortium (W3C/WAI).
-                </p>
-                <p>
-                    El nivel de conformidad alcanzado en el diseño base es <strong>Nivel AA</strong>, complementado con hojas de estilo específicas que alcanzan el <strong>Nivel AAA</strong> en contraste y legibilidad para usuarios con necesidades visuales avanzadas.
-                </p>
-            </section>
+            <h3>Etiquetado semántico de la página</h3>
+            <p>Estructuración basada en HTML5 mediante regiones de referencia (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>). Los formularios emplean <code>fieldset</code>, <code>legend</code> y etiquetas <code>label</code> asociadas por <code>id</code>, manteniendo una jerarquía lógica de encabezados.</p>
 
-            <section>
-                <h3>2. Etiquetado Semántico de la Página</h3>
-                <p>
-                    La estructura de las páginas se basa íntegramente en las especificaciones semánticas de HTML5, evitando el uso superfluo de contenedores genéricos y garantizando una navegación lógica y estructurada:
-                </p>
-                <ul>
-                    <li><strong>Regiones de referencia (Landmarks):</strong> Uso de elementos estándar <code>&lt;header&gt;</code> para cabeceras institucionales, <code>&lt;nav&gt;</code> para menús de navegación, <code>&lt;main&gt;</code> para el bloque principal, <code>&lt;section&gt;</code> y <code>&lt;article&gt;</code> para unidades de contenido autónomas, <code>&lt;aside&gt;</code> para información complementaria de acceso de usuarios, y <code>&lt;footer&gt;</code> para el pie de página.</li>
-                    <li><strong>Formularios estructurados:</strong> Cada campo de entrada cuenta con su correspondiente etiqueta <code>&lt;label&gt;</code> vinculada mediante el atributo <code>for</code> al identificador <code>id</code>. Los bloques temáticos están organizados con <code>&lt;fieldset&gt;</code> y titulados con <code>&lt;legend&gt;</code>.</li>
-                    <li><strong>Jerarquía de encabezados:</strong> Estructura rigurosa y ordenada de niveles desde <code>&lt;h1&gt;</code> hasta <code>&lt;h3&gt;</code>, facilitando a los usuarios de lectores de pantalla la exploración ágil del contenido.</li>
-                </ul>
-            </section>
+            <h3>Texto alternativo de las imágenes</h3>
+            <p>Todas las imágenes significativas cuentan con texto alternativo detallado en el atributo <code>alt</code>. Los iconos de Font Awesome disponen de <code>role="img"</code> y <code>aria-label</code> o <code>aria-hidden</code> para evitar interferencias con lectores de pantalla.</p>
 
-            <section>
-                <h3>3. Texto Alternativo de las Imágenes</h3>
-                <p>
-                    Todas las imágenes que transmiten contenido sustantivo (como fotografías de viviendas, planos, miniaturas y logotipos) incorporan un atributo <code>alt</code> riguroso y descriptivo, permitiendo a los usuarios con discapacidad visual conocer con precisión el inmueble y su contexto.
-                </p>
-                <p>
-                    Los elementos decorativos e iconos gráficos procedentes de librerías como Font Awesome cuentan con atributos de accesibilidad como <code>role="img"</code> y <code>aria-label</code> o <code>aria-hidden="true"</code>, evitando lecturas confusas en tecnologías de apoyo.
-                </p>
-            </section>
+            <h3>Correcto uso de los colores</h3>
+            <p>La información no se transmite exclusivamente a través del color. Los esquemas cumplen los ratios de contraste WCAG AA (mínimo 4.5:1) y AAA (mínimo 7:1 en alto contraste), garantizando plena legibilidad a personas con daltonismo.</p>
 
-            <section>
-                <h3>4. Correcto Uso de los Colores y Contraste</h3>
-                <p>
-                    En el diseño visual de HabitaQ se aplican los principios de diseño accesible para el uso del color:
-                </p>
-                <ul>
-                    <li><strong>Independencia del color:</strong> Ninguna información esencial o estado de la interfaz se transmite exclusivamente mediante el color; siempre se acompaña de texto, etiquetas semánticas o cambios de forma.</li>
-                    <li><strong>Ratios de contraste certificados:</strong> El estilo predeterminado mantiene relaciones de contraste texto/fondo superiores a <strong>4.5:1</strong> para texto normal (Criterio WCAG 1.4.3 Nivel AA). El estilo de alto contraste alcanza valores superiores a <strong>7:1</strong> y <strong>21:1</strong> (Criterio WCAG 1.4.6 Nivel AAA).</li>
-                    <li><strong>Compatibilidad con daltonismo:</strong> La paleta de colores y las líneas delimitadoras han sido diseñadas para ser plenamente legibles por usuarios con protanopía, deuteranopía, tritanopía y acromatopsia.</li>
-                </ul>
-            </section>
+            <h3>Activación de las hojas de estilo accesibles</h3>
+            <p>El usuario puede alternar la presentación visual desde las opciones del navegador:</p>
+            <ul>
+                <li><strong>Mozilla Firefox:</strong> Pulsa la tecla <code>Alt</code> &rarr; Menú <em>Ver</em> &rarr; <em>Estilo de página</em> &rarr; Selecciona <em>Estilo predeterminado</em>, <em>Modo noche</em>, <em>Estilo de alto contraste</em>, <em>Estilo de tamaño grande</em>, <em>Estilo de alto contraste y tamaño grande</em> o <em>Estilo para impresión</em>.</li>
+                <li><strong>Google Chrome y Microsoft Edge:</strong> Mediante extensiones de alternate stylesheets o a través de las herramientas de desarrollador (<code>F12</code> &rarr; pestaña <em>Rendering</em>).</li>
+            </ul>
 
-            <section>
-                <h3>5. Cómo Activar las Hojas de Estilo Accesibles y Alternativas</h3>
-                <p>
-                    El portal ofrece múltiples hojas de estilo adaptadas a diferentes perfiles visuales y dispositivos, seleccionables directamente a través de las opciones del navegador web:
-                </p>
-                <fieldset>
-                    <legend>Instrucciones de activación por navegador</legend>
-                    <p><strong>En Mozilla Firefox (Recomendado):</strong></p>
-                    <ol>
-                        <li>Si la barra de menús superior no está visible, pulse la tecla <strong>Alt</strong> en su teclado.</li>
-                        <li>Despliegue el menú <strong>Ver</strong> y sitúe el cursor sobre <strong>Estilo de página</strong>.</li>
-                        <li>Seleccione la alternativa deseada:
-                            <ul>
-                                <li><strong>Estilo predeterminado:</strong> Diseño estándar sobrio y equilibrado en tonos claros.</li>
-                                <li><strong>Modo noche:</strong> Paleta de tonos oscuros y bajo brillo diseñada para evitar la fatiga visual en entornos poco iluminados.</li>
-                                <li><strong>Estilo de alto contraste:</strong> Fondo negro (#000000) con textos en blanco y amarillo intenso (Nivel AAA) y bordes resaltados.</li>
-                                <li><strong>Estilo de tamaño grande:</strong> Tipografía hiperlegible <em>Atkinson Hyperlegible</em> con tamaño base de 20px, interlineado de 1.8 y controles ampliados.</li>
-                                <li><strong>Estilo de alto contraste y tamaño grande:</strong> Combinación simultánea de máxima relación de contraste y tipografía ampliada.</li>
-                                <li><strong>Estilo para impresión:</strong> Versión en pantalla que simula el acabado en blanco y negro para papel.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <p><strong>En Google Chrome y Microsoft Edge:</strong></p>
-                    <p>
-                        Estos navegadores no incorporan de forma nativa un menú de selección de hojas de estilo alternativas. Sin embargo, puede:
-                    </p>
-                    <ul>
-                        <li>Emplear extensiones de accesibilidad recomendadas como <em>Web Developer</em> (menú CSS &rarr; Use Alternate Style Sheets) o <em>Stylebot</em>.</li>
-                        <li>Utilizar las herramientas de desarrollador (tecla <strong>F12</strong>), abrir la pestaña <em>Rendering</em> y seleccionar la emulación de preferencias visuales (<code>prefers-color-scheme: dark</code> o medio de impresión).</li>
-                    </ul>
-                </fieldset>
-            </section>
+            <h3>Otras características implementadas</h3>
+            <ul>
+                <li>Enlace accesible de salto al contenido principal (<code>.saltar-a</code>), visible al usar la tecla Tab.</li>
+                <li>Tipografía hiperlegible <em>Atkinson Hyperlegible</em> (Braille Institute) en el estilo de tamaño grande.</li>
+                <li>Límite de lectura a 80 caracteres por línea (<code>max-width: 80ch</code>) y texto alineado a la izquierda sin justificar.</li>
+                <li>Navegación íntegra por teclado con foco visual nítido (<code>:focus-visible</code>).</li>
+                <li>Hoja de estilos de impresión (<code>impresion.css</code>) con unidades absolutas en <code>pt</code>, tipografía con serifa a 12pt, supresión de navegación superflua y justificante formal para solicitudes de folleto.</li>
+                <li>Independencia de presentación: maquetación legible y ordenada aun desactivando el CSS.</li>
+            </ul>
 
-            <section>
-                <h3>6. Resto de Características de Accesibilidad Implementadas</h3>
-                <ul>
-                    <li><strong>Enlace de salto directo:</strong> Se incluye al inicio del documento el enlace accesible <em>"Saltar al contenido principal"</em>, visible al recibir el foco mediante el teclado (tecla Tab), permitiendo a personas con discapacidad motriz o usuarios de lectores de pantalla obviar los bloques repetitivos de navegación.</li>
-                    <li><strong>Tipografía hiperlegible Atkinson Hyperlegible:</strong> Desarrollada por el Braille Institute of America para personas con baja visión y dislexia, previene la ambigüedad diferenciando nítidamente caracteres conflictivos como la 'I' mayúscula, la 'l' minúscula, el número '1', el número '0' y la letra 'O'.</li>
-                    <li><strong>Limitación del ancho de lectura:</strong> El texto de los párrafos está limitado a un máximo de 80 caracteres por línea (<code>max-width: 80ch</code>) para evitar desorientación durante el salto de línea ocular.</li>
-                    <li><strong>Alineación no justificada:</strong> Todo el texto está alineado a la izquierda para evitar espacios variables irregulares entre palabras ("ríos" blancos) que dificultan la comprensión lectora.</li>
-                    <li><strong>Navegación completa por teclado:</strong> Todos los elementos interactivos cuentan con un indicador visual de foco contrastado (<code>:focus-visible</code>), garantizando la operabilidad sin necesidad de ratón.</li>
-                    <li><strong>Hoja de estilo para impresión (impresion.css):</strong> Optimizada para dispositivos de papel con unidades absolutas en puntos y centímetros, tipografía con serifa (Times New Roman) a 12pt, eliminación de elementos no imprimibles (menús, logins, botones) e inclusión de URLs completas de los enlaces. En la página de confirmación de folleto, genera automáticamente un justificante/recibo formal de pedido.</li>
-                    <li><strong>Independencia de presentación:</strong> Si se desactivan completamente las hojas de estilo CSS en el navegador, la página mantiene un orden de lectura lineal 100% coherente e inteligible.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>7. Contacto, Consultas y Observaciones</h3>
-                <p>
-                    Si experimenta alguna dificultad para acceder a los contenidos de este sitio web, desea formular alguna queja relativa al cumplimiento de los requisitos de accesibilidad o requiere información en un formato alternativo accesible, puede ponerse en contacto con el equipo responsable a través de los siguientes canales:
-                </p>
-                <ul>
-                    <li><strong>Correo electrónico:</strong> <a href="mailto:accesibilidad@habitaq.ua.es">accesibilidad@habitaq.ua.es</a></li>
-                    <li><strong>Teléfono de atención:</strong> +34 965 90 34 00</li>
-                    <li><strong>Dirección postal:</strong> Carretera San Vicente del Raspeig s/n, 03690 San Vicente del Raspeig (Alicante), España</li>
-                </ul>
-            </section>
-
-            <section>
-                <h3>8. Preparación de la Declaración de Accesibilidad</h3>
-                <p>
-                    La presente declaración de accesibilidad fue preparada el <strong>22 de octubre de 2026</strong>. El método empleado para verificar la conformidad del sitio web ha consistido en una autoevaluación exhaustiva mediante análisis manual del código fuente, comprobación de contraste con herramientas WebAIM Contrast Checker y validación de interoperabilidad con navegadores Firefox, Chrome y lectores de pantalla.
-                </p>
-            </section>
-        </article>
+            <h3>Contacto y observaciones</h3>
+            <p>Para consultas, reporte de barreras de acceso o solicitud de formatos alternativos: <a href="mailto:accesibilidad@habitaq.ua.es">accesibilidad@habitaq.ua.es</a>.</p>
+        </section>
     </main>
 
     <footer>
