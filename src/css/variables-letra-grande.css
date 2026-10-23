@@ -6,43 +6,7 @@
    ========================================================================== */
 
 :root {
-    /* Paleta de colores estándar sobria y profesional */
-    --color-primario: #0f172a;          /* Pizarra oscuro / casi negro */
-    --color-primario-suave: #1e293b;    /* Pizarra intermedio */
-    --color-secundario: #334155;        /* Gris pizarra para elementos secundarios */
-    --color-fondo: #f8fafc;             /* Fondo blanco roto / gris muy claro */
-    --color-superficie: #ffffff;        /* Blanco puro para tarjetas y formularios */
-    --color-texto: #0f172a;             /* Texto principal oscuro de alto contraste */
-    --color-texto-suave: #64748b;       /* Texto atenuado para metadatos */
-    --color-texto-claro: #ffffff;       /* Texto blanco sobre fondos oscuros */
-    --color-borde: #cbd5e1;             /* Borde ligeramente más definido */
-    --color-borde-hover: #94a3b8;       /* Borde en hover */
-    --color-borde-foco: #0f172a;        /* Borde de foco */
-
-    /* Colores semánticos */
-    --color-cabecera: #0f172a;
-    --color-cabecera-borde: #1e293b;
-    --color-enlace: #0f172a;
-    --color-enlace-hover: #334155;
-    --color-input-fondo: #ffffff;
-    --color-input-texto: #0f172a;
-    --color-input-placeholder: #64748b;
-    --color-boton-fondo: #0f172a;
-    --color-boton-hover: #334155;
-    --color-boton-texto: #ffffff;
-    --color-pie: #0f172a;
-    --color-pie-texto: #94a3b8;
-
-    /* Tablas monocromáticas */
-    --color-tabla-cabecera: linear-gradient(to bottom, #1e293b, #0f172a);
-    --color-fila-impar: #f8fafc;
-    --color-fila-par: #ffffff;
-    --color-fila-hover: #f1f5f9;
-
-    /* Tipografía profesional */
-    --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
-
+    
     /* ==========================================================================
        Escala Tipográfica Ampliada (Letras Grandes - Aumento ~25% a ~35%)
        ========================================================================== */
