@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitaQ - Declaración de Accesibilidad</title>
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- Estilos principal y alternativos -->
+    <link rel="stylesheet" type="text/css" href="../css/variables.css" title="Estilo principal" />
+    <link rel="alternate stylesheet" type="text/css" href="../css/variables-oscuro.css" title="Tema oscuro / Modo noche" />
+    <link rel="alternate stylesheet" type="text/css" href="../css/variables-letra-grande.css" title="Letras grandes" />
+    <link rel="alternate stylesheet" type="text/css" href="../css/variables-contraste.css" title="Alto contraste" />
+    <link rel="alternate stylesheet" type="text/css" href="../css/variables-accesibilidad-combinada.css" title="Alto contraste + Letras grandes" />
+    <link rel="alternate stylesheet" type="text/css" href="../css/variables-impresion.css" title="Modo de impresión" />
+</head>
+
+<body>
+    <!-- Enlace accesible de salto al contenido principal -->
+    <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
+
+    <header>
+        <a href="index.html">
+            <img src="../img/favicon.png" alt="HabitaQ" width="100">
+            <h1>HabitaQ</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Inicio</a></li>
+                <li><a href="formBusqueda.html"><i class="fa-solid fa-magnifying-glass" role="img" aria-label="Búsqueda Avanzada"></i> Búsqueda Avanzada</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <section>
+            <h2>Declaración de Accesibilidad</h2>
+            <p>HabitaQ está comprometido con la accesibilidad universal conforme a las pautas WCAG 2.1 (Niveles AA y AAA) y las Directivas (UE) 2016/2102 y 2019/882.</p>
+
+            <h3>Etiquetado semántico de la página</h3>
+            <p>Estructuración basada en HTML5 mediante regiones de referencia (<code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code>). Los formularios emplean <code>fieldset</code>, <code>legend</code> y etiquetas <code>label</code> asociadas por <code>id</code>, manteniendo una jerarquía lógica de encabezados.</p>
+
+            <h3>Texto alternativo de las imágenes</h3>
+            <p>Todas las imágenes significativas cuentan con texto alternativo detallado en el atributo <code>alt</code>. Los iconos de Font Awesome disponen de <code>role="img"</code> y <code>aria-label</code> o <code>aria-hidden</code> para evitar interferencias con lectores de pantalla.</p>
+
+            <h3>Correcto uso de los colores</h3>
+            <p>La información no se transmite exclusivamente a través del color. Los esquemas cumplen los ratios de contraste WCAG AA (mínimo 4.5:1) y AAA (mínimo 7:1 en alto contraste), garantizando plena legibilidad a personas con daltonismo.</p>
+
+            <h3>Activación de las hojas de estilo accesibles</h3>
+            <p>El usuario puede alternar la presentación visual desde las opciones del navegador:</p>
+            <ul>
+                <li><strong>Mozilla Firefox:</strong> Pulsa la tecla <code>Alt</code> &rarr; Menú <em>Ver</em> &rarr; <em>Estilo de página</em> &rarr; Selecciona <em>Estilo predeterminado</em>, <em>Modo noche</em>, <em>Estilo de alto contraste</em>, <em>Estilo de tamaño grande</em>, <em>Estilo de alto contraste y tamaño grande</em> o <em>Estilo para impresión</em>.</li>
+                <li><strong>Google Chrome y Microsoft Edge:</strong> Mediante extensiones de alternate stylesheets o a través de las herramientas de desarrollador (<code>F12</code> &rarr; pestaña <em>Rendering</em>).</li>
+            </ul>
+
+            <h3>Otras características implementadas</h3>
+            <ul>
+                <li>Enlace accesible de salto al contenido principal (<code>.saltar-a</code>), visible al usar la tecla Tab.</li>
+                <li>Tipografía hiperlegible <em>Atkinson Hyperlegible</em> (Braille Institute) en el estilo de tamaño grande.</li>
+                <li>Límite de lectura a 80 caracteres por línea (<code>max-width: 80ch</code>) y texto alineado a la izquierda sin justificar.</li>
+                <li>Navegación íntegra por teclado con foco visual nítido (<code>:focus-visible</code>).</li>
+                <li>Hoja de estilos de impresión (<code>impresion.css</code>) con unidades absolutas en <code>pt</code>, tipografía con serifa a 12pt, supresión de navegación superflua y justificante formal para solicitudes de folleto.</li>
+                <li>Independencia de presentación: maquetación legible y ordenada aun desactivando el CSS.</li>
+            </ul>
+
+            <h3>Contacto y observaciones</h3>
+            <p>Para consultas, reporte de barreras de acceso o solicitud de formatos alternativos: <a href="mailto:accesibilidad@habitaq.es">accesibilidad@habitaq.es</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pau Cremades García. Antonio Carbonell Gómez</p>
+        <p>&copy; HabitaQ &bull; <a href="accesibilidad.html">Declaración de accesibilidad</a></p>
+    </footer>
+</body>
+
+</html>

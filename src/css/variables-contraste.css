@@ -43,8 +43,8 @@
     --color-fila-hover: #333333;
 
     /* Tipografía */
-    --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+    --fuente-titulos: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    --fuente-cuerpo: 'Atkinson Hyperlegible', system-ui, sans-serif;
 
     /* Escala Tipográfica Global */
     --tamano-fuente-html: 16px;
@@ -93,3 +93,4 @@
 body > header img {
     filter: brightness(0);
 }
+

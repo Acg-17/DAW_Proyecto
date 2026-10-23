@@ -43,8 +43,8 @@
     --color-pie-texto: #000000;         /* Texto del pie de página */
 
     /* Tipografía */
-    --fuente-titulos: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+    --fuente-titulos: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    --fuente-cuerpo: 'Atkinson Hyperlegible', system-ui, sans-serif;
 
     /* Escala Tipográfica de Letra Grande */
     --tamano-fuente-html: 18px;
