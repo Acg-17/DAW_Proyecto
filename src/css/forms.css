@@ -230,3 +230,26 @@ aside form input[type="submit"] {
     width: 100%;
     margin-top: var(--espacio-md);
 }
+
+
+/* ==========================================================================
+   Feedback visual de errores de validacion
+   ========================================================================== */
+.campo-error {
+    border: 2px solid #d32f2f !important;
+    background-color: #ffe6e6 !important;
+}
+
+.campo-error:focus {
+    border-color: #d32f2f !important;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.25) !important;
+}
+
+.texto-error {
+    color: #d32f2f;
+    font-size: 0.85em;
+    font-weight: 500;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
