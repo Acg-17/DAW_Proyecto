@@ -140,3 +140,8 @@ footer {
 footer p {
     margin: var(--espacio-xs) 0;
 }
+
+/*Para ocultar elementos*/
+.oculto {
+  display: none;
+}
