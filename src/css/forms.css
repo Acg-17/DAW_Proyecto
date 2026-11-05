@@ -201,6 +201,63 @@ input[type="submit"][disabled] {
     cursor: not-allowed;
 }
 
+/* Botón secundario normalizado en formularios (Cancelar, volver) */
+.btn-secundario,
+a.btn-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--color-superficie);
+    color: var(--color-primario);
+    font-family: var(--fuente-titulos);
+    font-size: var(--tamano-fuente-btn);
+    font-weight: 600;
+    padding: 0.7rem 1.6rem;
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio-borde-sm);
+    text-decoration: none;
+    line-height: normal;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    margin-top: var(--espacio-md);
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.btn-secundario:hover,
+a.btn-secundario:hover {
+    background-color: var(--color-primario);
+    color: var(--color-texto-inverso, #ffffff);
+    text-decoration: none;
+}
+
+/* Botón interactivo de alternar tabla de folletos */
+#botonTablaPrecios,
+.btn-tabla-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-boton-fondo, var(--color-primario));
+    color: var(--color-boton-texto, var(--color-texto-claro, #ffffff)) !important;
+    font-family: var(--fuente-titulos);
+    font-size: var(--tamano-fuente-btn);
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio-borde-sm);
+    cursor: pointer;
+    margin-top: var(--espacio-sm);
+    transition: background-color 0.2s ease;
+}
+
+#botonTablaPrecios:hover,
+.btn-tabla-toggle:hover {
+    background-color: var(--color-boton-hover, var(--color-secundario));
+    border-color: var(--color-secundario);
+    color: #ffffff !important;
+}
+
 /* Formulario de búsqueda en encabezado */
 main > header form {
     display: flex;

@@ -204,7 +204,22 @@ section > p:has(> a[href*=".html"], > a[href*=".php"]) a:hover {
 }
 
 /* Avatar de usuario */
+#userSection article > img:first-child,
+.avatar-usuario,
 img[alt*="perfil"] {
+    width: 120px !important;
+    height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 3px solid var(--color-primario) !important;
+    margin: 0.5rem 0 1rem 0 !important;
+    display: block !important;
+}
+
+.avatar-antiguo {
     border-radius: 50%;
     border: 2px solid var(--color-borde);
     margin: var(--espacio-sm) 0;

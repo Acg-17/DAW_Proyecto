@@ -21,7 +21,7 @@ return [
         'email'      => 'antonio@habitaq.com',
         'sexo'       => 'Hombre',
         'nacimiento' => '2004-09-15',
-        'ciudad'     => 'Alcoy',
+        'ciudad'     => 'Alicante',
         'pais'       => 'España'
     ]
 ];

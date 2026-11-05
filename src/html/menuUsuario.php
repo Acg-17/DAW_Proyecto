@@ -50,7 +50,7 @@ require_once(__DIR__ . '/../php/inicio.php');
             <?php endif; ?>
 
             <article>
-                <img src="../img/user.png" alt="Foto de perfil de <?= e($datosUsuario['nombre']); ?>" width="120" style="border-radius: 50%; border: 3px solid var(--color-primario); display: block; margin-bottom: 1rem;">
+                <img src="../img/user.png" alt="Foto de perfil de <?= e($datosUsuario['nombre']); ?>" class="avatar-usuario" style="width: 120px; height: 120px; max-width: 120px; max-height: 120px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 3px solid var(--color-primario); display: block; margin-bottom: 1rem;">
                 <p>Usuario: <strong><?= e($datosUsuario['usuario']); ?></strong></p>
                 <p>Nombre y apellidos: <strong><?= e($datosUsuario['nombre']); ?></strong></p>
                 <p>Correo electrónico: <strong><?= e($datosUsuario['email']); ?></strong></p>

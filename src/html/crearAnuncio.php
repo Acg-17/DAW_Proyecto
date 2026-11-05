@@ -113,9 +113,9 @@ require_once(__DIR__ . '/../php/inicio.php');
                     <textarea name="descripcion" id="descripcion" placeholder="Describe los puntos fuertes del inmueble..."></textarea>
                 </fieldset>
 
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
                     <input type="submit" value="Publicar Inmueble &rarr;">
-                    <a href="menuUsuario.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde">Cancelar y volver al panel</a>
+                    <a href="menuUsuario.php?usuario=<?= urlencode($usuarioActual); ?>" class="btn-secundario">Cancelar y volver al panel</a>
                 </div>
             </form>
         </section>

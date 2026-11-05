@@ -137,6 +137,17 @@ footer {
     border-top: 1px solid var(--color-cabecera-borde, var(--color-primario-suave));
 }
 
+footer a {
+    color: #ffffff !important;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: #93c5fd !important;
+    text-decoration: underline;
+}
+
 footer p {
     margin: var(--espacio-xs) 0;
 }

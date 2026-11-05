@@ -123,7 +123,7 @@ require_once(__DIR__ . '/../php/inicio.php');
         <section id="tablaPrecios">
             <h3>Tabla interactiva de costes</h3>
             <p>Puedes consultar o alternar la visualización de la tabla interactiva de tarifas a continuación:</p>
-            <button id="botonTablaPrecios" type="button" class="conBorde">Ocultar</button>
+            <button id="botonTablaPrecios" type="button" class="btn-tabla-toggle">Ocultar</button>
         </section>
 
         <section>
