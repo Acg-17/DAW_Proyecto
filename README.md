@@ -153,3 +153,102 @@ Para satisfacer el requisito de la sección 3 y 4.7 (*«Además de usar la bibli
   * Ciudad: `"Introduce tu ciudad"`
   * Precio: `"Introduce el presupuesto máximo de tu vivienda"`
 * **Campos obligatorios**: En [`registro.html`](src/html/registro.html), todos los campos obligatorios están indicados explícitamente con asterisco (`*`) y mensaje aclaratorio al inicio del formulario, dejando la fotografía de perfil señalada claramente como `(opcional)`.
+
+
+---
+
+## Memoria Técnica y Defensa de la Práctica 7: PHP (1) - Formularios y Modularidad
+
+Este documento detalla todas las decisiones de diseño, arquitectura modular en PHP, seguridad, procesamiento de formularios y cumplimiento estricto del enunciado y la rúbrica oficial de la **Práctica 7: Administración de un servidor web y PHP 1 (formularios)**.
+
+---
+
+### 1. Comparativa Técnica: Requisitos Oficiales de la Práctica 7 vs. Prácticas Posteriores
+
+En cumplimiento estricto de las directrices del profesor para la **Práctica 7**:
+* **Bases de datos (MySQL):** En esta práctica **NO se utiliza base de datos aún** (*Pág. 2 y 3 del PDF: "Como todavía no existen anuncios y fotos en una base de datos, debes emplear unos valores ficticios... en una próxima práctica se accederá a una base de datos"*). Se emplean ficheros independientes de datos en PHP (`datos_usuarios.php` y `datos_anuncios.php`).
+* **Sesiones y Cookies:** En esta práctica **está expresamente prohibido el uso de `$_SESSION` y cookies** (*Páginas 4 y 24 del PDF: "Importante: en esta práctica todavía no debes usar sesiones, eso se verá en una próxima práctica... no se debe realizar mediante cookies"*). La propagación y control se realiza mediante parámetros URL y métodos HTTP GET/POST nativos.
+* **Validaciones HTML/JS:** Se desactivan o permiten envíos sin restricción de cliente (`novalidate`) para poder demostrar y evaluar la validación robusta en el servidor PHP (*Pág. 5 del PDF*).
+
+---
+
+### 2. Arquitectura del Proyecto y Modularización de Plantillas (Sección 4.4)
+
+Siguiendo el esquema pedagógico de la Figura 6 y las recomendaciones de seguridad (*usar extensión `.php` en vez de `.inc`, Nota 18 y Pág. 24*), la estructura se ha organizado en:
+
+```text
+DAW_Proyecto/
+├── index.php                 # Redirección raíz hacia src/html/index.php
+├── index.html                # Redirección estática fallback
+├── plantillaHF.php           # Ejemplo de plantilla base modular
+│
+└── src/
+    ├── php/
+    │   ├── cabecera.php      # DOCTYPE, <head>, meta, CSS principal y alternativos
+    │   ├── inicio.php        # <body>, enlace de salto accesible, <header>, <nav>
+    │   ├── pie.php           # <footer>, copyright, accesibilidad y cierre </body></html>
+    │   ├── funciones.php     # Helper de seguridad contra XSS e() y algoritmo de tarifas
+    │   ├── datos_usuarios.php # 4 usuarios registrados permitidos (Pág. 3)
+    │   └── datos_anuncios.php # 2 anuncios completos (par/impar) con características (Nota 8)
+    │
+    ├── html/
+    │   ├── index.php         # Portada pública, buscador rápido, 5 anuncios y login
+    │   ├── controlAcceso.php # Validación de login y redirección header() sin salida
+    │   ├── indexRegistrado.php # Portada para usuario registrado
+    │   ├── menuUsuario.php   # Menú privado de usuario y edición de datos
+    │   ├── misAnuncios.php   # Listado de anuncios del usuario (Pág. 4)
+    │   ├── verAnuncio.php    # Ficha del anuncio con enlace a foto fija
+    │   ├── anadirFoto.php    # Formulario para añadir foto (fija o desplegable libre)
+    │   ├── crearAnuncio.php  # Formulario completo para publicar nuevo anuncio
+    │   ├── registro.php      # Formulario de registro con repoblación de errores por URL
+    │   ├── respuestaRegistro.php # Validación de usuario y contraseñas coincidentes
+    │   ├── formBusqueda.php  # Formulario con todos los filtros avanzados
+    │   ├── resultadoBusqueda.php # Muestra criterios reales introducidos + resultados
+    │   ├── detalleAdd.php    # Ficha pública que alterna anuncio según ID par/impar
+    │   ├── mensaje.php       # Formulario para contactar con el anunciante
+    │   ├── respuestaMensaje.php  # Validación de tipo de mensaje y texto no vacío
+    │   ├── solicitarFolleto.php  # Tabla de tarifas + Tabla PHP (Figura 2) + Formulario
+    │   ├── respuestaFolleto.php  # Cálculo en PHP del presupuesto final y confirmación
+    │   ├── misMensajes.php   # Bandeja de mensajes enviados y recibidos
+    │   ├── accesibilidad.php # Declaración de accesibilidad
+    │   ├── error404.php      # Página de error 404
+    │   └── errorUsrNotRegistered.php # Error para usuarios no autenticados
+    │
+    ├── css/                  # Estilos modulares consolidados en Práctica 4
+    ├── js/                   # Scripts auxiliares y comprobación de tarifas en cliente
+    └── img/                  # Recursos gráficos e imágenes de inmuebles
+```
+
+---
+
+### 3. Implementación de los Requisitos del PDF
+
+#### 3.1. Control de Acceso (`controlAcceso.php` y `datos_usuarios.php`)
+* **Validación en servidor:** Comprueba con `trim()` que ningún campo esté vacío ni contenga solo espacios/tabuladores.
+* **Usuarios permitidos:** Comprobación estricta contra los 4 usuarios definidos en `src/php/datos_usuarios.php` (`Laura`, `Pau`, `Antonio`, `admin`).
+* **Redirección segura:** Si es válido, redirige con `header("Location: menuUsuario.php?usuario=...")`. Si es inválido, redirige a `index.php?error=...` pasando el mensaje y el usuario previo por URL para dar feedback visual inmediato.
+
+#### 3.2. Tabla de Tarifas y Presupuesto de Folletos en PHP (`solicitarFolleto.php` y `respuestaFolleto.php`)
+* **Tabla dinámica (Figura 2):** Generada mediante bucle PHP de 1 a 15 páginas calculando los costes exactos de Blanco y Negro vs. Color para resoluciones 150-300 DPI y 450-900 DPI.
+* **Cálculo en servidor:** `respuestaFolleto.php` recoge los parámetros del usuario (color/BN, DPI, número de copias) y aplica la fórmula oficial con páginas/fotos ficticias (4 páginas / 12 fotos), garantizando que el precio final nunca pueda ser manipulado en cliente.
+
+#### 3.3. Ficha de Detalle de Anuncio Par / Impar (`detalleAdd.php` y `verAnuncio.php`)
+* Conforme a la Sección 3 (Página 3), la página selecciona el anuncio de `src/php/datos_anuncios.php` según si el identificador recibido es par o impar.
+* Incluye todas las características requeridas por la Nota al pie 8: superficie, número de habitaciones, número de baños, planta y año de construcción.
+
+#### 3.4. Añadir Foto a Anuncio (`anadirFoto.php`)
+* Si se accede desde la ficha de un anuncio (`?id=X`), el anuncio aparece **seleccionado y bloqueado/deshabilitado** (no se puede cambiar).
+* Si se accede desde el menú privado sin parámetro, ofrece una **lista desplegable** para elegir el anuncio.
+* Valida texto alternativo obligatorio de al menos 10 caracteres (*Nota 10 del PDF*).
+
+#### 3.5. Búsqueda y Resultados (`formBusqueda.php` y `resultadoBusqueda.php`)
+* Procesa parámetros tanto de búsqueda rápida como avanzada y muestra en el encabezado de resultados los criterios reales introducidos antes del listado.
+
+#### 3.6. Seguridad frente a XSS (Cross-Site Scripting - Sección 4.6)
+* Todos los datos recibidos mediante `$_GET` o `$_POST` que se renderizan en el HTML se escapan mediante la función auxiliar `e($value)` implementada en `src/php/funciones.php`:
+  ```php
+  function e($value) {
+      if ($value === null) return '';
+      return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+  }
+  ```
