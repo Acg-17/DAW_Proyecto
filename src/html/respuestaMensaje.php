@@ -1,10 +1,6 @@
 <?php
 /**
- * Respuesta a "Enviar Mensaje" - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 3 del PDF):
- * - Comprobar que el tipo de mensaje es válido.
- * - Comprobar que se ha escrito algo en el texto del mensaje.
- * - Mostrar confirmación del envío con los datos reales introducidos (escapados con e()).
+ * Respuesta a "Enviar Mensaje" - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
@@ -26,12 +22,10 @@ $usuarioActual   = isset($_POST['usuario']) ? trim($_POST['usuario']) : '';
 
 $errores = [];
 
-// Validación 1: Tipo de mensaje válido
 if ($messageType === '' || !array_key_exists($messageType, $tiposValidos)) {
     $errores[] = 'El tipo de comunicación seleccionado no es válido.';
 }
 
-// Validación 2: Texto del mensaje no vacío ni solo espacios
 if ($message === '') {
     $errores[] = 'El contenido del mensaje es obligatorio y no puede estar vacío ni contener solo espacios.';
 }
@@ -45,11 +39,10 @@ require_once(__DIR__ . '/../php/inicio.php');
 
     <main id="contenido-principal">
         <?php if (!empty($errores)): ?>
-            <!-- Caso de error en la validación -->
             <section>
                 <h2><i class="fa-solid fa-triangle-exclamation" role="img" aria-label="Error"></i> No se pudo enviar el mensaje</h2>
                 <div style="background-color: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 6px; border: 1px solid #f87171; margin-bottom: 1.5rem;">
-                    <p><strong>Por favor, corrige los siguientes problemas detectados por el servidor:</strong></p>
+                    <p><strong>Por favor, corrige los siguientes problemas:</strong></p>
                     <ul>
                         <?php foreach ($errores as $err): ?>
                             <li><?= e($err); ?></li>
@@ -61,13 +54,12 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </p>
             </section>
         <?php else: ?>
-            <!-- Caso de éxito: Confirmación y datos reales introducidos -->
             <section>
                 <h2><i class="fa-solid fa-circle-check" role="img" aria-label="Éxito"></i> Confirmación de Envío de Mensaje</h2>
-                <p><strong>¡Tu mensaje ha sido validado y enviado con éxito al anunciante!</strong></p>
+                <p><strong>¡Tu mensaje ha sido enviado con éxito al anunciante!</strong></p>
 
                 <fieldset>
-                    <legend>Resumen de la comunicación procesada por el servidor</legend>
+                    <legend>Resumen de la comunicación</legend>
                     <p>Destinatario / Propietario: <strong><?= e($destinatario); ?></strong></p>
                     <p>Inmueble de referencia: <strong><?= e($anuncioTitulo); ?> (#<?= $anuncioId; ?>)</strong></p>
                     <p>Remitente: <strong><?= e($nombreRemitente ?: 'Usuario anónimo'); ?></strong> (<?= e($emailRemitente ?: 'Sin correo indicado'); ?>)</p>
@@ -77,19 +69,17 @@ require_once(__DIR__ . '/../php/inicio.php');
                         <?= nl2br(e($message)); ?>
                     </blockquote>
                     <p style="font-size: 0.85rem; color: var(--color-texto-suave);">
-                        Fecha y hora del registro: <strong><?= date('d/m/Y - H:i:s'); ?></strong>
+                        Fecha y hora del envío: <strong><?= date('d/m/Y - H:i:s'); ?></strong>
                     </p>
                 </fieldset>
 
-                <div style="margin-top: 1.5rem;">
-                    <p>
-                        <a href="detalleAdd.php?id=<?= $anuncioId; ?><?= $esRegistrado ? '&usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
-                            <i class="fa-solid fa-house" role="img" aria-label="Anuncio"></i> Volver al detalle del inmueble
-                        </a>
-                        <a href="index.php" class="conBorde">
-                            <i class="fa-solid fa-arrow-left" role="img" aria-label="Inicio"></i> Ir a la página principal
-                        </a>
-                    </p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="detalleAdd.php?id=<?= $anuncioId; ?><?= $esRegistrado ? '&usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
+                        <i class="fa-solid fa-house" role="img" aria-label="Anuncio"></i> Volver a la ficha del inmueble
+                    </a>
+                    <a href="index.php" class="conBorde">
+                        <i class="fa-solid fa-house-chimney" role="img" aria-label="Inicio"></i> Ir a la página principal
+                    </a>
                 </div>
             </section>
         <?php endif; ?>

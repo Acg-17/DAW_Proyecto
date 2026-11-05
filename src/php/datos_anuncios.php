@@ -1,13 +1,9 @@
 <?php
 /**
- * Almacén de anuncios de prueba - HabitaQ (DAW Práctica 7)
- * Requisito Sección 3 (Página 3): Dos anuncios distintos en fichero separado.
- * Selección según ID par o impar.
- * Características exigidas (nota 8): superficie, habitaciones, baños, planta, año de construcción.
+ * Almacén de anuncios inmobiliarios - HabitaQ
  */
 
 return [
-    // Anuncio 1 (ID Impar: 1, 3, 5, etc.)
     'impar' => [
         'id'               => 1,
         'tipoAnuncio'      => 'Venta',
@@ -34,11 +30,10 @@ return [
             '../img/casa4.png',
             '../img/casa5.png'
         ],
-        'usuario'          => 'Laura García',
-        'usuario_login'    => 'Laura'
+        'usuario'          => 'Antonio Carbonell Gómez',
+        'usuario_login'    => 'Antonio'
     ],
 
-    // Anuncio 2 (ID Par: 2, 4, 6, etc.)
     'par' => [
         'id'               => 2,
         'tipoAnuncio'      => 'Venta',

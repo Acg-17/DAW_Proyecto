@@ -1,6 +1,6 @@
 <?php
 /**
- * Error Usuario No Registrado - HabitaQ (DAW Práctica 7)
+ * Error Usuario No Registrado - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 

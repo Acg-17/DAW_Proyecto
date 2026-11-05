@@ -1,11 +1,6 @@
 <?php
 /**
- * Página "Solicitar folleto" - HabitaQ (DAW Práctica 7)
- * Requisitos (Páginas 2 y 3 del PDF):
- * - Muestra la tabla de tarifas vigentes.
- * - Genera y muestra la tabla de costes de álbum impreso calculada mediante PHP (Figura 2 del PDF).
- * - Se mantiene la compatibilidad con la tabla JS para comprobar coincidencia de valores.
- * - Formulario para solicitar folleto que envía los datos a respuestaFolleto.php.
+ * Página "Solicitar folleto" - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
@@ -83,10 +78,9 @@ require_once(__DIR__ . '/../php/inicio.php');
             </table>
         </section>
 
-        <!-- REQUISITO EXIGIDO: Tabla calculada mediante PHP (Figura 2 del PDF de la Práctica 7) -->
         <section>
-            <h3><i class="fa-solid fa-calculator" role="img" aria-label="Cálculo"></i> Tabla con posibles costes de un folleto (Generada mediante PHP)</h3>
-            <p>Esta tabla ha sido computada dinámicamente en el servidor con PHP aplicando las tarifas progresivas:</p>
+            <h3><i class="fa-solid fa-calculator" role="img" aria-label="Cálculo"></i> Tabla con posibles costes de un folleto</h3>
+            <p>A continuación se detallan los costes orientativos según el número de páginas, selección de color y resolución:</p>
 
             <table>
                 <caption>Posibles costes de un folleto impreso según páginas, color y resolución</caption>
@@ -125,10 +119,10 @@ require_once(__DIR__ . '/../php/inicio.php');
             </table>
         </section>
 
-        <!-- Tabla generada con JavaScript (permitida por nota 7 para comprobación cruzada) -->
+        <!-- Tabla interactiva de costes -->
         <section id="tablaPrecios">
-            <h3>Tabla interactiva de costes (JavaScript)</h3>
-            <p>Comprueba que la tabla generada en cliente coincide con la calculada en servidor con PHP:</p>
+            <h3>Tabla interactiva de costes</h3>
+            <p>Puedes consultar o alternar la visualización de la tabla interactiva de tarifas a continuación:</p>
             <button id="botonTablaPrecios" type="button" class="conBorde">Ocultar</button>
         </section>
 

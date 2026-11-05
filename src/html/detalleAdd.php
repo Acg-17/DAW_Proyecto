@@ -1,13 +1,6 @@
 <?php
 /**
- * Página Detalle de Anuncio - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 3 del PDF):
- * - Muestra el detalle del anuncio seleccionado:
- *   Tipo de anuncio, tipo de vivienda, foto principal, título, precio, texto/descripción,
- *   fecha, ciudad, país, características (superficie, habitaciones, baños, planta, año de construcción),
- *   miniaturas de fotos y usuario propietario.
- * - Los datos se obtienen de datos_anuncios.php.
- * - La elección del anuncio depende de si el identificador recibido es PAR o IMPAR.
+ * Página Detalle de Anuncio - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
@@ -29,7 +22,7 @@ require_once(__DIR__ . '/../php/inicio.php');
             <header>
                 <p>Tipo de anuncio: <strong><?= e($anuncio['tipoAnuncio']); ?></strong></p>
                 <p>Tipo de vivienda: <strong><?= e($anuncio['tipoVivienda']); ?></strong></p>
-                <p>Identificador: <strong>#<?= $id; ?></strong> (<em><?= ($id % 2 === 0) ? 'Anuncio Par' : 'Anuncio Impar'; ?></em>)</p>
+                <p>Identificador: <strong>#<?= $id; ?></strong></p>
             </header>
 
             <img src="<?= e($anuncio['fotoPrincipal']); ?>" alt="<?= e($anuncio['titulo']); ?> - Imagen principal" width="400">
@@ -39,7 +32,6 @@ require_once(__DIR__ . '/../php/inicio.php');
             <p><strong>Descripción:</strong> <?= e($anuncio['descripcion']); ?></p>
             <p><?= e($anuncio['fecha']); ?> &bull; <?= e($anuncio['ciudad']); ?>, <?= e($anuncio['pais']); ?></p>
 
-            <!-- Características simplificadas según Nota 8 de la Práctica 7 -->
             <p><strong>Características del inmueble:</strong></p>
             <ul>
                 <li>Superficie: <strong><?= e($anuncio['superficie']); ?></strong></li>
@@ -60,14 +52,14 @@ require_once(__DIR__ . '/../php/inicio.php');
 
             <p>Propietario / Anunciante: <strong><?= e($anuncio['usuario']); ?></strong></p>
 
-            <p style="margin-top: 1.5rem;">
+            <div class="acciones-detalle" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
                 <a href="mensaje.php?id=<?= $id; ?><?= $esRegistrado ? '&usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
                     <i class="fa-solid fa-envelope" role="img" aria-label="Mensaje"></i> Contactar con el anunciante
                 </a>
                 <a href="resultadoBusqueda.php<?= $esRegistrado ? '?usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
                     <i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Volver a los resultados
                 </a>
-            </p>
+            </div>
         </article>
     </main>
 

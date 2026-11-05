@@ -1,6 +1,6 @@
 <?php
 /**
- * Declaración de Accesibilidad - HabitaQ (DAW Práctica 7)
+ * Declaración de Accesibilidad - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 

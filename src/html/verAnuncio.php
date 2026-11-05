@@ -1,9 +1,6 @@
 <?php
 /**
- * Página "Ver anuncio" (Área privada) - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 4 del PDF):
- * - Muestra toda la información del anuncio (datos de anuncio par/impar según ID).
- * - Enlace a "Añadir foto a anuncio" con el anuncio actual preseleccionado y bloqueado.
+ * Página "Ver anuncio" (Área privada) - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
@@ -12,7 +9,7 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $clave = ($id % 2 === 0) ? 'par' : 'impar';
 $anuncio = $anuncios[$clave];
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Laura';
+$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Pau';
 $title = 'Ver Anuncio - ' . $anuncio['titulo'];
 $esRegistrado = true;
 
@@ -24,7 +21,7 @@ require_once(__DIR__ . '/../php/inicio.php');
         <header>
             <div>
                 <h2><i class="fa-solid fa-house-chimney" role="img" aria-label="Anuncio"></i> Ficha del Inmueble (Panel Privado)</h2>
-                <p>Identificador de anuncio: <strong>#<?= $id; ?></strong> (<?= ($id % 2 === 0) ? 'Identificador Par' : 'Identificador Impar'; ?>)</p>
+                <p>Identificador de anuncio: <strong>#<?= $id; ?></strong></p>
             </div>
             <div>
                 <a href="anadirFoto.php?id=<?= $id; ?>&usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-camera" role="img" aria-label="Añadir foto"></i> Añadir foto a este anuncio</a>
@@ -45,7 +42,7 @@ require_once(__DIR__ . '/../php/inicio.php');
             <p><strong>Descripción:</strong> <?= e($anuncio['descripcion']); ?></p>
             <p><?= e($anuncio['fecha']); ?> &bull; <?= e($anuncio['ciudad']); ?>, <?= e($anuncio['pais']); ?></p>
 
-            <p><strong>Características principales (Nota 8 de la práctica):</strong></p>
+            <p><strong>Características principales del inmueble:</strong></p>
             <ul>
                 <li>Superficie: <strong><?= e($anuncio['superficie']); ?></strong></li>
                 <li>Habitaciones: <strong><?= e($anuncio['habitaciones']); ?></strong></li>
@@ -64,7 +61,6 @@ require_once(__DIR__ . '/../php/inicio.php');
             </p>
 
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                <!-- Enlace obligatorio exigido en la página 4 del PDF -->
                 <a href="anadirFoto.php?id=<?= $id; ?>&usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-camera" role="img" aria-label="Añadir foto"></i> Añadir foto a este anuncio</a>
                 <a href="misAnuncios.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-list-check" role="img" aria-label="Mis Anuncios"></i> Volver a mis anuncios</a>
                 <a href="menuUsuario.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-user" role="img" aria-label="Perfil"></i> Panel de usuario</a>

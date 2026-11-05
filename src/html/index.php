@@ -1,14 +1,13 @@
 <?php
 /**
- * Página principal pública - HabitaQ (DAW Práctica 7)
- * Utiliza plantilla modular PHP y formulario de acceso hacia controlAcceso.php
+ * Página principal pública - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
 $title = 'Inicio';
 $esRegistrado = false;
 
-// Manejo de errores devueltos por controlAcceso.php
+// Manejo de posibles mensajes de error devueltos por el control de acceso
 $mensajeError = isset($_GET['error']) ? trim($_GET['error']) : '';
 $usuarioPrevio = isset($_GET['user']) ? trim($_GET['user']) : '';
 
@@ -34,7 +33,6 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </div>
             <?php endif; ?>
 
-            <!-- Formulario conectado con controlAcceso.php (Validación en servidor PHP) -->
             <form id="formLogin" method="post" action="controlAcceso.php" novalidate>
                 <label for="username">Nombre de usuario</label>
                 <input type="text" name="username" id="username" value="<?= e($usuarioPrevio); ?>">
@@ -44,9 +42,6 @@ require_once(__DIR__ . '/../php/inicio.php');
 
                 <input type="submit" value="Entrar" id="loginSubmit">
             </form>
-            <p style="font-size: 0.85rem; color: var(--color-texto-suave); margin-top: 0.75rem;">
-                <em>Usuarios de prueba disponibles:</em> <strong>Laura</strong> (Pass1234), <strong>Pau</strong> (Pau2026!), <strong>Antonio</strong> (Antonio2026!).
-            </p>
         </aside>
 
         <section>

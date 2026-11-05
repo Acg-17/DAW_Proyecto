@@ -163,7 +163,7 @@ main > article img[alt*="Miniatura"]:hover {
 }
 
 /* Botón de contacto en detalle */
-main > article a[href="mensaje.html"] {
+main > article a[href*="mensaje"] {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -177,13 +177,13 @@ main > article a[href="mensaje.html"] {
     transition: background-color 0.2s ease;
 }
 
-main > article a[href="mensaje.html"]:hover {
+main > article a[href*="mensaje"]:hover {
     background-color: var(--color-boton-hover, var(--color-secundario));
     text-decoration: none;
 }
 
 /* Panel de Opciones de Usuario */
-section > p:has(> a[href*=".html"]) a {
+section > p:has(> a[href*=".html"], > a[href*=".php"]) a {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -197,7 +197,7 @@ section > p:has(> a[href*=".html"]) a {
     transition: all 0.2s ease;
 }
 
-section > p:has(> a[href*=".html"]) a:hover {
+section > p:has(> a[href*=".html"], > a[href*=".php"]) a:hover {
     background-color: var(--color-fondo);
     border-color: var(--color-secundario);
     text-decoration: none;

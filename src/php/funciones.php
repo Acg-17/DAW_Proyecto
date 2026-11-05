@@ -1,11 +1,10 @@
 <?php
 /**
- * Funciones auxiliares y de seguridad - HabitaQ (DAW Práctica 7)
+ * Funciones auxiliares y de seguridad - HabitaQ
  */
 
 /**
  * Función de escape contra ataques XSS (Cross-Site Scripting)
- * Cumple con la Sección 4.6 (Página 11) de la Práctica 7
  *
  * @param mixed $value
  * @return string
@@ -19,8 +18,7 @@ function e($value)
 }
 
 /**
- * Cálculo oficial de tarifas de folletos publicitarios en PHP
- * Cumple con la Sección 3 (Página 2) y la Figura 2 (Página 3)
+ * Cálculo de tarifas de folletos publicitarios
  *
  * Tarifas base:
  * - Coste procesamiento y envío base: 10.00 €

@@ -1,15 +1,11 @@
 <?php
 /**
- * Página "Mis anuncios" - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 4 del PDF):
- * - Muestra un listado con todos los anuncios del usuario.
- * - Al menos se debe mostrar la foto principal (en miniatura), el título, la ciudad, el país y el precio.
- * - Enlaces hacia "Ver anuncio" y hacia "Añadir foto a anuncio".
+ * Página "Mis anuncios" - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Laura';
+$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Pau';
 $title = 'Mis Anuncios Publicados';
 $esRegistrado = true;
 
@@ -74,12 +70,11 @@ require_once(__DIR__ . '/../php/inicio.php');
                     </tr>
                 </tbody>
             </table>
-        </section>
 
-        <section>
-            <p>
-                <a href="menuUsuario.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Volver a mi perfil</a>
-            </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="menuUsuario.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-user" role="img" aria-label="Perfil"></i> Panel de usuario</a>
+                <a href="crearAnuncio.php?usuario=<?= urlencode($usuarioActual); ?>" class="conBorde"><i class="fa-solid fa-plus" role="img" aria-label="Crear"></i> Publicar nuevo anuncio</a>
+            </div>
         </section>
     </main>
 

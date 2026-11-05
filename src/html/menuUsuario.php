@@ -1,14 +1,13 @@
 <?php
 /**
- * Página de Menú de Usuario Registrado - HabitaQ (DAW Práctica 7)
- * Cumple con la Figura 1 (Páginas 2 y 4)
+ * Página de Menú de Usuario Registrado - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 $usuarios = require(__DIR__ . '/../php/datos_usuarios.php');
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : (isset($_POST['usuario']) ? trim($_POST['usuario']) : 'Laura');
+$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : (isset($_POST['usuario']) ? trim($_POST['usuario']) : 'Pau');
 if ($usuarioActual === '') {
-    $usuarioActual = 'Laura';
+    $usuarioActual = 'Pau';
 }
 
 // Buscar datos del usuario
@@ -30,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion']) && $_POST['
     $datosUsuario['email'] = isset($_POST['email']) ? trim($_POST['email']) : $datosUsuario['email'];
     $datosUsuario['sexo'] = isset($_POST['sexo']) ? trim($_POST['sexo']) : $datosUsuario['sexo'];
     $datosUsuario['ciudad'] = isset($_POST['ciudad']) ? trim($_POST['ciudad']) : $datosUsuario['ciudad'];
-    $mensajeExito = 'Tus datos personales se han actualizado correctamente en el servidor.';
+    $mensajeExito = 'Tus datos personales se han actualizado correctamente.';
 }
 
 $title = 'Mi Perfil - ' . $datosUsuario['nombre'];
@@ -50,58 +49,55 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </div>
             <?php endif; ?>
 
-            <form id="datosUser" method="post" action="menuUsuario.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" novalidate>
+            <article>
+                <img src="../img/user.png" alt="Foto de perfil de <?= e($datosUsuario['nombre']); ?>" width="120" style="border-radius: 50%; border: 3px solid var(--color-primario); display: block; margin-bottom: 1rem;">
+                <p>Usuario: <strong><?= e($datosUsuario['usuario']); ?></strong></p>
+                <p>Nombre y apellidos: <strong><?= e($datosUsuario['nombre']); ?></strong></p>
+                <p>Correo electrónico: <strong><?= e($datosUsuario['email']); ?></strong></p>
+                <p>Sexo: <strong><?= e($datosUsuario['sexo']); ?></strong></p>
+                <p>Fecha de nacimiento: <strong><?= e($datosUsuario['nacimiento']); ?></strong></p>
+                <p>Ubicación: <strong><?= e($datosUsuario['ciudad']); ?>, <?= e($datosUsuario['pais']); ?></strong></p>
+            </article>
+
+            <!-- Formulario para modificar datos -->
+            <form method="post" action="menuUsuario.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" novalidate style="margin-top: 1.5rem;">
                 <input type="hidden" name="accion" value="actualizar">
                 <input type="hidden" name="usuario" value="<?= e($datosUsuario['usuario']); ?>">
 
                 <fieldset>
-                    <legend>Datos personales de la cuenta</legend>
+                    <legend><i class="fa-solid fa-user-pen" role="img" aria-label="Editar"></i> Modificar datos del perfil</legend>
 
-                    <label for="usuario">Nombre de usuario (identificador):</label>
-                    <input type="text" id="usuario" name="usuario_mostrar" value="<?= e($datosUsuario['usuario']); ?>" readonly style="background-color: var(--color-fondo);">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" name="nombre" id="nombre" value="<?= e($datosUsuario['nombre']); ?>">
 
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" value="<?= e($datosUsuario['nombre']); ?>">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" name="email" id="email" value="<?= e($datosUsuario['email']); ?>">
 
-                    <label for="email">&#9993; Dirección de correo:</label>
-                    <input type="email" id="email" name="email" value="<?= e($datosUsuario['email']); ?>">
-
-                    <label for="sexo">Sexo:</label>
+                    <label for="sexo">Sexo</label>
                     <select name="sexo" id="sexo">
                         <option value="Hombre" <?= ($datosUsuario['sexo'] === 'Hombre') ? 'selected' : ''; ?>>Hombre</option>
                         <option value="Mujer" <?= ($datosUsuario['sexo'] === 'Mujer') ? 'selected' : ''; ?>>Mujer</option>
-                        <option value="Otro" <?= ($datosUsuario['sexo'] === 'Otro') ? 'selected' : ''; ?>>Otro</option>
-                        <option value="Prefiero no especificarlo" <?= ($datosUsuario['sexo'] === 'Prefiero no especificarlo') ? 'selected' : ''; ?>>Prefiero no especificarlo</option>
+                        <option value="No binario" <?= ($datosUsuario['sexo'] === 'No binario') ? 'selected' : ''; ?>>No binario</option>
+                        <option value="Prefiero no responder" <?= ($datosUsuario['sexo'] === 'Prefiero no responder') ? 'selected' : ''; ?>>Prefiero no responder</option>
                     </select>
 
-                    <label for="ciudad">Ciudad de residencia:</label>
-                    <input type="text" id="ciudad" name="ciudad" value="<?= e($datosUsuario['ciudad']); ?>">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" name="ciudad" id="ciudad" value="<?= e($datosUsuario['ciudad']); ?>">
 
-                    <label for="pais">País:</label>
-                    <input type="text" id="pais" name="pais" value="<?= e($datosUsuario['pais']); ?>" readonly style="background-color: var(--color-fondo);">
-
-                    <label for="foto">Foto de perfil:</label>
-                    <input type="file" name="foto" id="foto">
-                    <img src="../img/user.png" alt="Foto de perfil de <?= e($datosUsuario['nombre']); ?>" width="100">
-
-                    <input type="submit" value="Guardar Cambios &rarr;">
+                    <input type="submit" value="Guardar cambios">
                 </fieldset>
-            </form>
-
-            <form method="get" action="index.php" style="margin-top: 1rem;">
-                <button type="submit" onclick="return confirm('¿Seguro que deseas solicitar la baja del portal?');"><i class="fa-solid fa-user-xmark" role="img" aria-label="Baja"></i> Darse de baja</button>
             </form>
         </section>
 
-        <section>
-            <h2><i class="fa-solid fa-gear" role="img" aria-label="Opciones"></i> Panel de Gestión del Usuario</h2>
-            <p>Accede a las opciones de tu cuenta según el diagrama de navegación de la aplicación:</p>
-            <p><a href="misAnuncios.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>"><i class="fa-solid fa-list-check" role="img" aria-label="Mis Anuncios"></i> <strong>Mis anuncios</strong> (gestionar y ver anuncios propios)</a></p>
-            <p><a href="crearAnuncio.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>"><i class="fa-solid fa-circle-plus" role="img" aria-label="Crear anuncio"></i> <strong>Crear anuncio</strong> (publicar nuevo inmueble)</a></p>
-            <p><a href="anadirFoto.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>"><i class="fa-solid fa-image" role="img" aria-label="Añadir foto"></i> <strong>Añadir foto a anuncio</strong> (seleccionar anuncio)</a></p>
-            <p><a href="misMensajes.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>"><i class="fa-solid fa-envelope" role="img" aria-label="Mensajes"></i> <strong>Mis mensajes</strong> (buzón de entrada y salida)</a></p>
-            <p><a href="solicitarFolleto.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>"><i class="fa-solid fa-print" role="img" aria-label="Folleto"></i> <strong>Solicitar folleto publicitario</strong> (cálculo en PHP)</a></p>
-            <p><a href="index.php"><i class="fa-solid fa-right-from-bracket" role="img" aria-label="Salir"></i> <strong>Salir</strong> (cerrar sesión)</a></p>
+        <section id="panelAcciones">
+            <h2><i class="fa-solid fa-compass" role="img" aria-label="Opciones"></i> Panel de Gestión</h2>
+            <p>
+                <a href="crearAnuncio.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" class="conBorde"><i class="fa-solid fa-circle-plus" role="img" aria-label="Crear"></i> Publicar nuevo anuncio</a>
+                <a href="misAnuncios.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" class="conBorde"><i class="fa-solid fa-list-check" role="img" aria-label="Mis Anuncios"></i> Mis anuncios</a>
+                <a href="anadirFoto.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" class="conBorde"><i class="fa-solid fa-camera" role="img" aria-label="Fotos"></i> Añadir foto a anuncio</a>
+                <a href="misMensajes.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" class="conBorde"><i class="fa-solid fa-envelope" role="img" aria-label="Mensajes"></i> Centro de mensajes</a>
+                <a href="solicitarFolleto.php?usuario=<?= urlencode($datosUsuario['usuario']); ?>" class="conBorde"><i class="fa-solid fa-book-open" role="img" aria-label="Folleto"></i> Solicitar folleto impreso</a>
+            </p>
         </section>
     </main>
 

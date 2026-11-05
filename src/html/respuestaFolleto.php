@@ -1,12 +1,6 @@
 <?php
 /**
- * Respuesta a "Solicitar Folleto" - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 2 del PDF):
- * - Muestra confirmación de que se ha registrado la solicitud de folleto.
- * - Muestra el coste final calculado en PHP a partir de la solicitud del usuario.
- * - Emplea valores ficticios para el número de páginas y de fotos (ya que aún no hay BD de fotos).
- * - Tiene en cuenta el resto de parámetros del usuario: color/BN, resolución DPI, número de copias.
- * - El número de copias multiplica el precio unitario.
+ * Respuesta a "Solicitar Folleto" - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
@@ -31,7 +25,7 @@ $colorModo  = isset($origen['color_modo']) ? $origen['color_modo'] : 'color';
 $anuncioId  = isset($origen['anuncioId']) ? (int)$origen['anuncioId'] : 1;
 $usuarioActual = isset($origen['usuario']) ? trim($origen['usuario']) : '';
 
-// Parámetros ficticios de páginas y fotos exigidos por el enunciado (Página 2)
+// Parámetros base de páginas y fotografías para el cálculo del folleto
 $paginasFicticias = 4; // Por ejemplo, un folleto díptico estándar de 4 páginas
 $fotosFicticias = $paginasFicticias * 3; // 12 fotografías
 $esColor = ($colorModo === 'color');
@@ -69,7 +63,7 @@ require_once(__DIR__ . '/../php/inicio.php');
             <fieldset>
                 <legend>Detalles técnicos del folleto publicitario</legend>
                 <p>Anuncio seleccionado: <strong>Anuncio #<?= $anuncioId; ?></strong></p>
-                <p>Número de páginas (ficticio según rúbrica): <strong><?= $paginasFicticias; ?> páginas</strong></p>
+                <p>Número de páginas: <strong><?= $paginasFicticias; ?> páginas</strong></p>
                 <p>Número de fotografías (3 fotos por pág.): <strong><?= $fotosFicticias; ?> fotografías</strong></p>
                 <p>Modo de impresión: <strong><?= $esColor ? 'A todo color' : 'Blanco y negro'; ?></strong></p>
                 <p>Resolución seleccionada: <strong><?= $res; ?> DPI</strong> (<em><?= ($res > 300) ? 'Alta resolución' : 'Resolución estándar'; ?></em>)</p>
@@ -77,9 +71,8 @@ require_once(__DIR__ . '/../php/inicio.php');
                 <p>Número de copias solicitadas: <strong><?= $copias; ?></strong></p>
             </fieldset>
 
-            <!-- REQUISITO EXIGIDO: Coste final calculado mediante PHP -->
             <fieldset>
-                <legend><i class="fa-solid fa-receipt" role="img" aria-label="Factura"></i> Presupuesto final calculado por PHP</legend>
+                <legend><i class="fa-solid fa-receipt" role="img" aria-label="Factura"></i> Presupuesto final desglosado</legend>
                 <table>
                     <caption>Desglose del coste unitario y total</caption>
                     <thead>
@@ -119,15 +112,13 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </table>
             </fieldset>
 
-            <div style="margin-top: 1.5rem;">
-                <p>
-                    <a href="solicitarFolleto.php<?= $esRegistrado ? '?usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
-                        <i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Solicitar otro folleto
-                    </a>
-                    <a href="index.php" class="conBorde">
-                        <i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver a la página principal
-                    </a>
-                </p>
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="solicitarFolleto.php<?= $esRegistrado ? '?usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
+                    <i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Solicitar otro folleto
+                </a>
+                <a href="index.php" class="conBorde">
+                    <i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver a la página principal
+                </a>
             </div>
         </section>
     </main>

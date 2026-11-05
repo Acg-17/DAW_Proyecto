@@ -1,7 +1,6 @@
 <?php
 /**
- * Formulario de Búsqueda Avanzada - HabitaQ (DAW Práctica 7)
- * Cumple con la Figura 1 (Páginas 2 y 3)
+ * Formulario de Búsqueda Avanzada - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
@@ -16,7 +15,7 @@ require_once(__DIR__ . '/../php/inicio.php');
     <main id="contenido-principal">
         <section>
             <h2><i class="fa-solid fa-sliders" role="img" aria-label="Filtros"></i> Búsqueda Avanzada de Inmuebles</h2>
-            <p>Filtra según tus preferencias para encontrar el inmueble deseado. Los datos introducidos serán procesados por el servidor PHP en la página de resultados.</p>
+            <p>Filtra según tus preferencias para encontrar el inmueble que mejor se adapte a tus necesidades.</p>
 
             <form method="get" action="resultadoBusqueda.php" novalidate>
                 <?php if ($esRegistrado): ?>
@@ -48,21 +47,20 @@ require_once(__DIR__ . '/../php/inicio.php');
                     <option value="Espana">España</option>
                     <option value="Francia">Francia</option>
                     <option value="Portugal">Portugal</option>
+                    <option value="Andorra">Andorra</option>
                     <option value="Italia">Italia</option>
-                    <option value="Alemania">Alemania</option>
-                    <option value="Reino Unido">Reino Unido</option>
                 </select>
 
-                <label for="precioMin">Precio mínimo (€)</label>
-                <input type="number" name="precioMin" id="precioMin" placeholder="Ej. 100000" min="0" step="5000">
+                <label for="minPrice">Precio mínimo (€)</label>
+                <input type="number" name="minPrice" id="minPrice" placeholder="50.000" min="0" step="5000">
 
-                <label for="precioMax">Precio máximo (€)</label>
-                <input type="number" name="precioMax" id="precioMax" placeholder="Introduce el presupuesto máximo de tu vivienda" min="0" step="5000">
+                <label for="maxPrice">Precio máximo (€)</label>
+                <input type="number" name="maxPrice" id="maxPrice" placeholder="500.000" min="0" step="5000">
 
-                <label for="fechaDesde">Fecha de publicación (Desde)</label>
+                <label for="fechaDesde">Fecha de publicación desde</label>
                 <input type="date" name="fechaDesde" id="fechaDesde">
 
-                <label for="fechaHasta">Fecha de publicación (Hasta)</label>
+                <label for="fechaHasta">Fecha de publicación hasta</label>
                 <input type="date" name="fechaHasta" id="fechaHasta">
 
                 <input type="submit" value="Buscar Inmuebles &rarr;">

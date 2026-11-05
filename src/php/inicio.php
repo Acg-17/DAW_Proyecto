@@ -1,14 +1,13 @@
 <?php
 /**
- * Inicio del cuerpo y barra de navegación - HabitaQ (DAW Práctica 7)
- * Cumple con la Sección 4.4 (Páginas 8-9): Estructura modular independiente
+ * Inicio del cuerpo y barra de navegación - HabitaQ
  */
 $esRegistrado = !empty($esRegistrado);
 $urlInicio = $esRegistrado ? 'indexRegistrado.php' : 'index.php';
 $usuarioUrlParam = !empty($usuarioActual) ? '?usuario=' . urlencode($usuarioActual) : '';
 ?>
 <body>
-    <!-- Enlace accesible de salto al contenido principal (Requisito Práctica 4) -->
+    <!-- Enlace accesible de salto al contenido principal -->
     <a href="#contenido-principal" class="saltar-a">Saltar al contenido principal</a>
 
     <header>

@@ -1,11 +1,6 @@
 <?php
 /**
- * Formulario de Registro de Nuevo Usuario - HabitaQ (DAW Práctica 7)
- * Requisitos (Páginas 4 y 25 del PDF):
- * - Envía los datos mediante POST a respuestaRegistro.php.
- * - Si recibe errores por la URL, muestra los mensajes de error e inicializa
- *   los campos con los datos introducidos previamente para que el usuario pueda corregirlos.
- * - Sin uso de sesiones ni cookies (especificación estricta del PDF).
+ * Formulario de Registro de Nuevo Usuario - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
@@ -38,7 +33,6 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </div>
             <?php endif; ?>
 
-            <!-- Formulario hacia respuestaRegistro.php (Caso a y b del PDF, Página 25) -->
             <form id="formRegistro" method="post" action="respuestaRegistro.php" novalidate>
                 <fieldset>
                     <legend>Datos de acceso y personales</legend>
@@ -60,36 +54,25 @@ require_once(__DIR__ . '/../php/inicio.php');
                         <option value="" disabled <?= ($valSexo === '') ? 'selected' : ''; ?>>Selecciona una opción</option>
                         <option value="Hombre" <?= ($valSexo === 'Hombre') ? 'selected' : ''; ?>>Hombre</option>
                         <option value="Mujer" <?= ($valSexo === 'Mujer') ? 'selected' : ''; ?>>Mujer</option>
-                        <option value="Otro" <?= ($valSexo === 'Otro') ? 'selected' : ''; ?>>Otro</option>
-                        <option value="Prefiero no especificarlo" <?= ($valSexo === 'Prefiero no especificarlo') ? 'selected' : ''; ?>>Prefiero no especificarlo</option>
+                        <option value="No binario" <?= ($valSexo === 'No binario') ? 'selected' : ''; ?>>No binario</option>
+                        <option value="Prefiero no responder" <?= ($valSexo === 'Prefiero no responder') ? 'selected' : ''; ?>>Prefiero no responder</option>
                     </select>
 
-                    <label for="fechaNac">Fecha de nacimiento: *</label>
-                    <input type="date" id="fechaNac" name="fechaNac" value="<?= e($valNacimiento); ?>">
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" id="nacimiento" name="nacimiento" value="<?= e($valNacimiento); ?>">
 
-                    <label for="ciudad">Ciudad de residencia: *</label>
-                    <input type="text" id="ciudad" name="ciudad" value="<?= e($valCiudad); ?>" placeholder="Introduce tu ciudad actual">
+                    <label for="ciudad">Ciudad de residencia:</label>
+                    <input type="text" id="ciudad" name="ciudad" value="<?= e($valCiudad); ?>" placeholder="Ej: Alicante">
 
-                    <label for="pais">País de residencia: *</label>
-                    <select name="pais" id="pais">
-                        <option value="España" <?= ($valPais === 'España') ? 'selected' : ''; ?>>España</option>
-                        <option value="Francia" <?= ($valPais === 'Francia') ? 'selected' : ''; ?>>Francia</option>
-                        <option value="Portugal" <?= ($valPais === 'Portugal') ? 'selected' : ''; ?>>Portugal</option>
-                        <option value="Italia" <?= ($valPais === 'Italia') ? 'selected' : ''; ?>>Italia</option>
-                        <option value="Alemania" <?= ($valPais === 'Alemania') ? 'selected' : ''; ?>>Alemania</option>
-                        <option value="Reino Unido" <?= ($valPais === 'Reino Unido') ? 'selected' : ''; ?>>Reino Unido</option>
-                    </select>
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" value="<?= e($valPais); ?>">
 
                     <label for="foto">Foto de perfil (opcional):</label>
-                    <input type="file" id="foto" name="foto">
+                    <input type="file" id="foto" name="foto" accept="image/*">
 
-                    <input type="submit" value="Registrarse &rarr;">
+                    <input type="submit" value="Completar Registro &rarr;">
                 </fieldset>
             </form>
-
-            <p style="margin-top: 1rem;">
-                ¿Ya tienes una cuenta registrada? <a href="index.php">Inicia sesión aquí</a>.
-            </p>
         </section>
     </main>
 

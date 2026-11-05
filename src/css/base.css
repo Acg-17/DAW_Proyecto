@@ -117,8 +117,12 @@ i.fa-brands {
     vertical-align: -0.05em;
 }
 
-/* Clases específicas solicitadas por el profesor en la Práctica 4 */
+/* Componentes de interfaz comunes */
 .conBorde {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    margin: 0.25rem 0.5rem 0.25rem 0;
     border: 1px solid var(--color-primario);
     border-radius: var(--radio-borde-sm);
     padding: var(--espacio-sm) var(--espacio-md);

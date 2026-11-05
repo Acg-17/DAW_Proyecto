@@ -1,7 +1,6 @@
 <?php
 /**
- * Pie de página común - HabitaQ (DAW Práctica 7)
- * Cumple con la Sección 4.4 (Páginas 8-9)
+ * Pie de página común - HabitaQ
  */
 ?>
     <footer>

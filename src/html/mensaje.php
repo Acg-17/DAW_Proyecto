@@ -1,7 +1,6 @@
 <?php
 /**
- * Página "Enviar Mensaje al Anunciante" - HabitaQ (DAW Práctica 7)
- * Cumple con la Figura 1 (Páginas 2 y 3)
+ * Página "Enviar Mensaje al Anunciante" - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
@@ -54,11 +53,11 @@ require_once(__DIR__ . '/../php/inicio.php');
                 </fieldset>
             </form>
 
-            <p style="margin-top: 1rem;">
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                 <a href="detalleAdd.php?id=<?= $id; ?><?= $esRegistrado ? '&usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
                     <i class="fa-solid fa-arrow-left" role="img" aria-label="Volver"></i> Volver a la ficha del inmueble
                 </a>
-            </p>
+            </div>
         </section>
     </main>
 

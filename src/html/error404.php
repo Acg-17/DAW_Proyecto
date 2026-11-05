@@ -1,6 +1,6 @@
 <?php
 /**
- * Error 404 - HabitaQ (DAW Práctica 7)
+ * Error 404 - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 

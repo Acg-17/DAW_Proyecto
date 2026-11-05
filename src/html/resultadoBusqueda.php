@@ -1,25 +1,21 @@
 <?php
 /**
- * Página de Resultados de Búsqueda - HabitaQ (DAW Práctica 7)
- * Requisitos (Página 3 del PDF):
- * - Además del ejemplo de resultado que ya contiene (datos estáticos),
- *   muestra los datos reales que el usuario ha introducido en el formulario de búsqueda.
- * - Recibe peticiones tanto de la "búsqueda rápida" (campo search) como del formulario avanzado.
+ * Página de Resultados de Búsqueda - HabitaQ
  */
 require_once(__DIR__ . '/../php/funciones.php');
 
 $usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : '';
 $esRegistrado = ($usuarioActual !== '');
-$title = 'Resultados de la Búsqueda';
+$title = 'Resultados de Búsqueda';
 
-// Recoger datos reales introducidos por el usuario
+// Recoger los filtros enviados por el formulario (GET)
 $searchRapida = isset($_GET['search']) ? trim($_GET['search']) : '';
 $tipoAnuncio  = isset($_GET['tipoAnuncio']) ? trim($_GET['tipoAnuncio']) : '';
 $tipoVivienda = isset($_GET['tipoVivienda']) ? trim($_GET['tipoVivienda']) : '';
 $ciudad       = isset($_GET['ciudad']) ? trim($_GET['ciudad']) : '';
 $pais         = isset($_GET['pais']) ? trim($_GET['pais']) : '';
-$precioMin    = isset($_GET['precioMin']) ? trim($_GET['precioMin']) : '';
-$precioMax    = isset($_GET['precioMax']) ? trim($_GET['precioMax']) : '';
+$precioMin    = isset($_GET['minPrice']) ? trim($_GET['minPrice']) : '';
+$precioMax    = isset($_GET['maxPrice']) ? trim($_GET['maxPrice']) : '';
 $fechaDesde   = isset($_GET['fechaDesde']) ? trim($_GET['fechaDesde']) : '';
 $fechaHasta   = isset($_GET['fechaHasta']) ? trim($_GET['fechaHasta']) : '';
 
@@ -30,10 +26,9 @@ require_once(__DIR__ . '/../php/inicio.php');
 ?>
 
     <main id="contenido-principal">
-        <!-- Requisito estricto de la Práctica 7 (Página 3): Mostrar los datos reales introducidos -->
         <section style="background-color: var(--color-superficie); border-left: 4px solid var(--color-primario);">
-            <h2><i class="fa-solid fa-filter" role="img" aria-label="Filtros"></i> Criterios de búsqueda introducidos</h2>
-            <p>El servidor PHP ha procesado los siguientes parámetros enviados desde el formulario:</p>
+            <h2><i class="fa-solid fa-filter" role="img" aria-label="Filtros"></i> Criterios de búsqueda aplicados</h2>
+            <p>Se muestran los resultados correspondientes a los siguientes criterios seleccionados:</p>
 
             <ul style="line-height: 1.8;">
                 <?php if ($searchRapida !== ''): ?>
@@ -48,9 +43,6 @@ require_once(__DIR__ . '/../php/inicio.php');
                     <li>Rango de fechas: <strong><?= e($fechaDesde ?: 'Inicio'); ?></strong> hasta <strong><?= e($fechaHasta ?: 'Hoy'); ?></strong></li>
                 <?php endif; ?>
             </ul>
-            <p style="font-size: 0.85rem; color: var(--color-texto-suave);">
-                <em>(En una próxima práctica estos parámetros filtrarán registros reales en la base de datos MySQL).</em>
-            </p>
         </section>
 
         <section>
@@ -101,13 +93,14 @@ require_once(__DIR__ . '/../php/inicio.php');
                     <p><strong>380.000 €</strong></p>
                 </article>
             </a>
-        </section>
 
-        <section>
-            <p>
-                <a href="formBusqueda.php<?= $esRegistrado ? '?usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde"><i class="fa-solid fa-sliders" role="img" aria-label="Modificar"></i> Modificar filtros de búsqueda</a>
-                <a href="index.php" class="conBorde"><i class="fa-solid fa-house" role="img" aria-label="Inicio"></i> Volver al inicio</a>
-            </p>
+            <div style="margin-top: 1.5rem;">
+                <p>
+                    <a href="formBusqueda.php<?= $esRegistrado ? '?usuario=' . urlencode($usuarioActual) : ''; ?>" class="conBorde">
+                        <i class="fa-solid fa-sliders" role="img" aria-label="Modificar"></i> Modificar criterios de búsqueda
+                    </a>
+                </p>
+            </div>
         </section>
     </main>
 
