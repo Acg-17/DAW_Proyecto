@@ -2,6 +2,7 @@
 /**
  * Página "Ver anuncio" (Área privada) - HabitaQ
  */
+require_once(__DIR__ . '/../php/comprobarAcceso.php');
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
 
@@ -9,7 +10,6 @@ $id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
 $clave = ($id % 2 === 0) ? 'par' : 'impar';
 $anuncio = $anuncios[$clave];
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Pau';
 $title = 'Ver Anuncio - ' . $anuncio['titulo'];
 $esRegistrado = true;
 

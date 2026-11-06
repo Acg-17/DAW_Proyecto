@@ -18,7 +18,7 @@ const boton = document.getElementById('botonTablaPrecios');
 crearTabla();
 
 boton.addEventListener('click', () => {
-htmlElement.children[2].classList.toggle('oculto');
+htmlElement.children[3].classList.toggle('oculto');
 if(boton.textContent == "Mostrar")
     boton.textContent = "Ocultar"
 else

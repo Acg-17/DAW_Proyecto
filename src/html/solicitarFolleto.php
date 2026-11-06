@@ -2,9 +2,9 @@
 /**
  * Página "Solicitar folleto" - HabitaQ
  */
+require_once(__DIR__ . '/../php/comprobarAcceso.php');
 require_once(__DIR__ . '/../php/funciones.php');
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : '';
 $esRegistrado = ($usuarioActual !== '');
 $title = 'Solicitar Folleto Publicitario';
 

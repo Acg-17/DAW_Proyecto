@@ -2,10 +2,10 @@
 /**
  * Página de Menú de Usuario Registrado - HabitaQ
  */
+require_once(__DIR__ . '/../php/comprobarAcceso.php');
 require_once(__DIR__ . '/../php/funciones.php');
 $usuarios = require(__DIR__ . '/../php/datos_usuarios.php');
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : (isset($_POST['usuario']) ? trim($_POST['usuario']) : 'Pau');
 if ($usuarioActual === '') {
     $usuarioActual = 'Pau';
 }

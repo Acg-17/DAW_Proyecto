@@ -2,10 +2,10 @@
 /**
  * Página principal para usuario registrado - HabitaQ
  */
+require_once(__DIR__ . '/../php/comprobarAcceso.php');
 require_once(__DIR__ . '/../php/funciones.php');
 $usuarios = require(__DIR__ . '/../php/datos_usuarios.php');
 
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Pau';
 $nombreMostrar = 'Pau Cremades García';
 foreach ($usuarios as $u) {
     if (strcasecmp($u['usuario'], $usuarioActual) === 0) {

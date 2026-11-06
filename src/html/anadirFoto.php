@@ -2,11 +2,11 @@
 /**
  * Página "Añadir foto a anuncio" - HabitaQ
  */
+require_once(__DIR__ . '/../php/comprobarAcceso.php');
 require_once(__DIR__ . '/../php/funciones.php');
 $anuncios = require(__DIR__ . '/../php/datos_anuncios.php');
 
 $idFijo = isset($_GET['id']) ? (int)$_GET['id'] : null;
-$usuarioActual = isset($_GET['usuario']) ? trim($_GET['usuario']) : 'Pau';
 $title = 'Añadir Fotografía a Anuncio';
 $esRegistrado = true;
 
